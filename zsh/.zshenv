@@ -31,43 +31,46 @@ export XDG_VIDEOS_DIR="$HOME/Videos"
 
 export PATH="/usr/lib/ccache/bin/:$PATH:$HOME/.local/bin"
 export XCURSOR_PATH="$XCURSOR_PATH:$XDG_DATA_HOME/icons"
+export STEAM_COMPAT_CLIENT_INSTALL_PATH="$XDG_DATA_HOME/Steam"
 
 #------
 # Dbus
-export DBUS_SESSION_BUS_ADDRESS="unix:path=$XDG_RUNTIME_DIR/bus"
+#export DBUS_SESSION_BUS_ADDRESS="unix:path=$XDG_RUNTIME_DIR/bus"
 
 #--------------------------------------------------------------------
 # Home cleanup (set XDG for everything that supports it in some way)
 
-[ -z "$XDG_CONFIG_HOME/dosbox" ] && mkdir -p "$XDG_CACHE_HOME/dosbox"
-[ -z "$XDG_CACHE_HOME/less" ] && mkdir -p "$XDG_CACHE_HOME/less"
-[ -z "$XDG_CACHE_HOME/zsh" ] && mkdir -p "$XDG_CACHE_HOME/zsh"
-[ -z "$XDG_CONFIG_HOME/zsh" ] && mkdir -p "$XDG_CONFIG_HOME/zsh"
-[ -z "$XDG_DATA_HOME/zsh" ] && mkdir -p "$XDG_DATA_HOME/zsh"
-
-export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME/java"
-export ASDF_CONFIG_FILE="$XDG_CONFIG_HOME/asdfrc"
-export ASDF_DATA_DIR="$XDG_CACHE_HOME/asdf"
-export CCACHE_CONFIGPATH="$XDG_CONFIG_HOME/ccache/config"
-export CCACHE_DIR="$XDG_CACHE_HOME/ccache"
-export GNUPGHOME="$XDG_DATA_HOME/gnupg"
-export GOPATH="$XDG_DATA_HOME/go"
-export GTK_RC_FILES="$XDG_CONFIG_HOME/gtk-1.0/gtkrc"
-export HISTFILE="$XDG_DATA_HOME/zsh/history"
-export ICEAUTHORITY="$XDG_CACHE_HOME/ICEauthority"
-export KDEHOME="$XDG_CONFIG_HOME/kde"
-export LESSHISTFILE="$XDG_CACHE_HOME/less/history"
-export LESSKEY="$XDG_CACHE_HOME/less/lesskey"
-export MYSQL_HISTFILE="$XDG_DATA_HOME/mysql_history"
-export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
-export PASSWORD_STORE_DIR="$XDG_DATA_HOME/pass"
-export PYLINTHOME="$XDG_CACHE_HOME/pylint"
-export PYTHONSTARTUP="$XDG_DATA_HOME/../bin/python_init.py"
-export VSCODE_PORTABLE="$XDG_DATA_HOME/vscode"
-export WGETRC="$XDG_CONFIG_HOME/wget/wgetrc"
-export WINEPREFIX="$XDG_DATA_HOME/wineprefixes/default"
-export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority"
+#[ -z "$XDG_CONFIG_HOME/dosbox" ] && mkdir -p "$XDG_CACHE_HOME/dosbox"
+#[ -z "$XDG_CACHE_HOME/less" ] && mkdir -p "$XDG_CACHE_HOME/less"
+#[ -z "$XDG_CACHE_HOME/zsh" ] && mkdir -p "$XDG_CACHE_HOME/zsh"
+#[ -z "$XDG_CONFIG_HOME/zsh" ] && mkdir -p "$XDG_CONFIG_HOME/zsh"
+#[ -z "$XDG_DATA_HOME/zsh" ] && mkdir -p "$XDG_DATA_HOME/zsh"
+#
+#export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME/java"
+#export ASDF_CONFIG_FILE="$XDG_CONFIG_HOME/asdfrc"
+#export ASDF_DATA_DIR="$XDG_CACHE_HOME/asdf"
+#export CCACHE_CONFIGPATH="$XDG_CONFIG_HOME/ccache/config"
+#export CCACHE_DIR="$XDG_CACHE_HOME/ccache"
+#export GNUPGHOME="$XDG_DATA_HOME/gnupg"
+#export GOPATH="$XDG_DATA_HOME/go"
+#export GTK_RC_FILES="$XDG_CONFIG_HOME/gtk-1.0/gtkrc"
+#export HISTFILE="$XDG_DATA_HOME/zsh/history"
+#export ICEAUTHORITY="$XDG_CACHE_HOME/ICEauthority"
+#export KDEHOME="$XDG_CONFIG_HOME/kde"
+#export LESSHISTFILE="$XDG_CACHE_HOME/less/history"
+#export LESSKEY="$XDG_CACHE_HOME/less/lesskey"
+#export MYSQL_HISTFILE="$XDG_DATA_HOME/mysql_history"
+#export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
+#export PASSWORD_STORE_DIR="$XDG_DATA_HOME/pass"
+#export PYLINTHOME="$XDG_CACHE_HOME/pylint"
+#export PYTHONSTARTUP="$XDG_DATA_HOME/../bin/python_init.py"
+#export VSCODE_PORTABLE="$XDG_DATA_HOME/vscode"
+#export WGETRC="$XDG_CONFIG_HOME/wget/wgetrc"
+#export WINEPREFIX="$XDG_DATA_HOME/wineprefixes/default"
+#export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority"
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
+export ZSH_CUSTOM="$XDG_CACHE_HOME/oh-my-zsh/custom"
+export ZSH="/home/owari/.cache/oh-my-zsh"
 
 #-----------------------
 # Qt5ct (Use GTK Theme)
@@ -170,5 +173,5 @@ ex=🎯:\
 #-------------
 # Start X.Org
 
-[ "$(tty)" = "/dev/tty1" ] && startx
+#[ "$(tty)" = "/dev/tty1" ] && startx
 

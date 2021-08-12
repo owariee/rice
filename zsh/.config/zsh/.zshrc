@@ -1,11 +1,9 @@
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+ZSH_THEME="spaceship"
+export NVM_LAZY_LOAD=true
+plugins=(git heroku pip lein command-not-found autojump brew common-aliases compleat git-extras git-flow npm osx web-search z zsh-autosuggestions zsh-syntax-highlighting zsh-history-substring-search zsh-nvm zsh-auto-nvm-use)
+source $ZSH/oh-my-zsh.sh
 
-#antigen bundle zsh-users/zsh-syntax-highlighting
-#antigen theme denysdovhan/spaceship-prompt
-
-. /opt/asdf-vm/asdf.sh
+# . /opt/asdf-vm/asdf.sh
 
 #compinit -d "$XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION"
 
@@ -21,20 +19,11 @@ alias pidgin="pidgin --config=\"$XDG_DATA_HOME/purple\""
 alias mbsync="mbsync -c \"$XDG_CONFIG_HOME/isync/mbsyncrc\""
 alias dolphin="DESKTOP_SESSION=kde dolphin"
 alias yay="yay --noconfirm"
+alias ls="lsd" # can be exa
 
-unset GTK2_RC_FILES
-export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
-[[ -f ~/.gtkrc-2.0 ]] && rm ~/.gtkrc-2.0 > /dev/null 2>&1
+#unset GTK2_RC_FILES
+#export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
+#[[ -f ~/.gtkrc-2.0 ]] && rm ~/.gtkrc-2.0 > /dev/null 2>&1
 
 xset r rate 300 50
-
-export ZSH="/home/owari/.cache/oh-my-zsh"
-ZSH_THEME="powerlevel10k/powerlevel10k"
-plugins=(git)
-
-source $ZSH/oh-my-zsh.sh
-
-[[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
-
-alias ls="ls --color" # instead of exa
 
