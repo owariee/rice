@@ -1,6 +1,11 @@
 ZSH_THEME="spaceship"
 export NVM_LAZY_LOAD=true
-plugins=(git heroku pip lein command-not-found autojump brew common-aliases compleat git-extras git-flow npm osx web-search z zsh-autosuggestions zsh-syntax-highlighting zsh-history-substring-search zsh-nvm zsh-auto-nvm-use)
+# heroku removed because i dont use heroku
+# osx removed because i dont use macOS
+# brew removed bacause i dont use macOS nor brew
+# git-extras removed because i dont use git-extras
+# git-flow removed because i dont use git-flow
+plugins=(git pip lein command-not-found autojump common-aliases compleat npm web-search z zsh-autosuggestions zsh-syntax-highlighting zsh-history-substring-search zsh-nvm zsh-auto-nvm-use)
 source $ZSH/oh-my-zsh.sh
 
 # . /opt/asdf-vm/asdf.sh
