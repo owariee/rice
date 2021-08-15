@@ -1,14 +1,13 @@
 ZSH_THEME="spaceship"
 export NVM_LAZY_LOAD=true
 plugins=(
-    #git
     pip
     npm
     command-not-found
     autojump
     compleat
     web-search 
-    z
+    #z
     zsh-autosuggestions
     zsh-syntax-highlighting
     zsh-history-substring-search
@@ -53,11 +52,14 @@ alias yay="yay --noconfirm"
 alias g="git"
 alias ga="git add"
 alias gc="git commit -m"
+alias gca="git commit --amend"
 alias gp="git push"
 alias gpl="git pull"
 alias gs="git status"
 alias gl="git log"
 alias glo="git log --oneline"
+
+alias z="j"
 
 # . /opt/asdf-vm/asdf.sh
 
