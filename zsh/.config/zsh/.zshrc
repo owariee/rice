@@ -1,18 +1,13 @@
 ZSH_THEME="spaceship"
 export NVM_LAZY_LOAD=true
 plugins=(
-    pip
-    npm
     command-not-found
     autojump
     compleat
     web-search 
-    #z
     zsh-autosuggestions
     zsh-syntax-highlighting
     zsh-history-substring-search
-    zsh-nvm
-    zsh-auto-nvm-use
 )
 source $ZSH/oh-my-zsh.sh
 
