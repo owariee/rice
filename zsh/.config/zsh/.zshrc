@@ -1,7 +1,7 @@
 ZSH_THEME="spaceship"
 export NVM_LAZY_LOAD=true
 plugins=(
-    git
+    #git
     pip
     npm
     command-not-found
@@ -26,22 +26,38 @@ alias l="ls -lfh"
 alias lt="ls -ltFh"
 alias ll="ls -l"
 alias ldot="ls -ld .*"
+
 alias grep="grep --color"
+
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
+
 alias fd='find . -type d -name'
 alias ff='find . -type f -name'
+
 alias -g NE="2> /dev/null"
 alias -g NUL="> /dev/null 2>&1"
+
 alias -s lszip="unzip -l"
 alias -s lsrar="unrar l"
 alias -s lstar="tar tf"
 alias -s lsace="unace l"V
+
 alias vi="nvim"
 alias vim="nvim"
+
 alias dnf="dnf -C"
 alias yay="yay --noconfirm"
+
+alias g="git"
+alias ga="git add"
+alias gc="git commit -m"
+alias gp="git push"
+alias gpl="git pull"
+alias gs="git status"
+alias gl="git log"
+alias glo="git log --oneline"
 
 # . /opt/asdf-vm/asdf.sh
 
