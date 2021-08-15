@@ -6,7 +6,7 @@ plugins=(
     npm
     command-not-found
     autojump
-    common-aliases
+#    common-aliases
     compleat
     web-search 
     z
@@ -17,6 +17,23 @@ plugins=(
     zsh-auto-nvm-use
 )
 source $ZSH/oh-my-zsh.sh
+
+#
+# common-aliases replacement
+#
+
+alias l="ls -lfh"
+alias lt="ls -ltFh"
+alias ll="ls -l"
+alias ldot="ls -ld .*"
+alias grep="grep --color"
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+alias fd='find . -type d -name'
+alias ff='find . -type f -name'
+alias -g NE="2> /dev/null"
+alias -g NUL="> /dev/null 2>&1"
 
 # . /opt/asdf-vm/asdf.sh
 
