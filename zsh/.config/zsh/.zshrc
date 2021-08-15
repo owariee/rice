@@ -6,7 +6,6 @@ plugins=(
     npm
     command-not-found
     autojump
-#    common-aliases
     compleat
     web-search 
     z
@@ -22,6 +21,7 @@ source $ZSH/oh-my-zsh.sh
 # common-aliases replacement
 #
 
+alias ls="lsd"
 alias l="ls -lfh"
 alias lt="ls -ltFh"
 alias ll="ls -l"
@@ -38,6 +38,10 @@ alias -s lszip="unzip -l"
 alias -s lsrar="unrar l"
 alias -s lstar="tar tf"
 alias -s lsace="unace l"V
+alias vi="nvim"
+alias vim="nvim"
+alias dnf="dnf -C"
+alias yay="yay --noconfirm"
 
 # . /opt/asdf-vm/asdf.sh
 
@@ -46,16 +50,9 @@ alias -s lsace="unace l"V
 alias csgo="cp -rf ~/Projects/code/csgo-cfg/autoexec.cfg ~/Projects/code/csgo-cfg/knifes ~/.local/share/Steam/userdata/254174168/730/local/cfg/."
 alias vps="TERM=xterm-256color ssh root@sabatini.xyz"
 alias vps2="TERM=xterm-256color ssh admin@echidna.ga"
-alias vi="nvim"
-alias vim="nvim"
-alias dnf="dnf -C"
 alias dpi="ratbagctl thundering-gerbil resolution 0 dpi"
-alias dosbox="dosbox -conf \"$XDG_CONFIG_HOME/dosbox/dosbox.conf\""
-alias pidgin="pidgin --config=\"$XDG_DATA_HOME/purple\""
 alias mbsync="mbsync -c \"$XDG_CONFIG_HOME/isync/mbsyncrc\""
 alias dolphin="DESKTOP_SESSION=kde dolphin"
-alias yay="yay --noconfirm"
-alias ls="lsd" # can be exa
 
 #unset GTK2_RC_FILES
 #export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
