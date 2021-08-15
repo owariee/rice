@@ -1,8 +1,6 @@
 ZSH_THEME="spaceship"
-export NVM_LAZY_LOAD=true
 plugins=(
     command-not-found
-    autojump
     compleat
     web-search 
     zsh-autosuggestions
@@ -10,6 +8,12 @@ plugins=(
     zsh-history-substring-search
 )
 source $ZSH/oh-my-zsh.sh
+
+#
+# source autojump
+#
+
+source /usr/share/autojump/autojump.zsh
 
 #
 # common-aliases replacement
