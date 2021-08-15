@@ -1,3 +1,4 @@
+ZSH_COMPDUMP="$ZSH/zcompdump"
 ZSH_THEME="spaceship"
 plugins=(
     command-not-found
@@ -10,10 +11,11 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 #
-# source autojump
+# source plugins
 #
 
 source /usr/share/autojump/autojump.zsh
+source /opt/asdf-vm/asdf.sh
 
 #
 # common-aliases replacement
@@ -60,9 +62,6 @@ alias glo="git log --oneline"
 
 alias z="j"
 
-# . /opt/asdf-vm/asdf.sh
-
-#compinit -d "$XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION"
 
 alias csgo="cp -rf ~/Projects/code/csgo-cfg/autoexec.cfg ~/Projects/code/csgo-cfg/knifes ~/.local/share/Steam/userdata/254174168/730/local/cfg/."
 alias vps="TERM=xterm-256color ssh root@sabatini.xyz"
