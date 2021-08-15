@@ -34,6 +34,10 @@ alias fd='find . -type d -name'
 alias ff='find . -type f -name'
 alias -g NE="2> /dev/null"
 alias -g NUL="> /dev/null 2>&1"
+alias -s lszip="unzip -l"
+alias -s lsrar="unrar l"
+alias -s lstar="tar tf"
+alias -s lsace="unace l"V
 
 # . /opt/asdf-vm/asdf.sh
 
