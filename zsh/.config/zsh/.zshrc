@@ -52,15 +52,21 @@ alias yay="yay --noconfirm"
 alias g="git"
 alias ga="git add"
 alias gc="git commit -m"
+<<<<<<< HEAD
 alias gca="git commit --amend"
+=======
+>>>>>>> ba141d4002e2a65e149c686a058ba484ca189f66
 alias gp="git push"
 alias gpl="git pull"
 alias gs="git status"
 alias gl="git log"
 alias glo="git log --oneline"
 
+<<<<<<< HEAD
 alias z="j"
 
+=======
+>>>>>>> ba141d4002e2a65e149c686a058ba484ca189f66
 # . /opt/asdf-vm/asdf.sh
 
 #compinit -d "$XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION"
