@@ -1,21 +1,36 @@
-ZSH_COMPDUMP="$ZSH/zcompdump"
-ZSH_THEME="spaceship"
-plugins=(
-    command-not-found
-    compleat
-    web-search 
-    zsh-autosuggestions
-    zsh-syntax-highlighting
-    zsh-history-substring-search
-)
-source $ZSH/oh-my-zsh.sh
-
 #
 # source plugins
 #
 
 source /usr/share/autojump/autojump.zsh
 source /opt/asdf-vm/asdf.sh
+source $XDG_CONFIG_HOME/zsh/horizon.zsh
+
+ohmyzsh_lib key-bindings
+ohmyzsh_plugin command-not-found
+ohmyzsh_plugin compleat
+ohmyzsh_plugin web-search
+github_plugin zsh-users/zsh-autosuggestions
+github_plugin zsh-users/zsh-syntax-highlighting
+github_plugin zsh-users/zsh-history-substring-search
+github_theme spaceship-prompt/spaceship-prompt spaceship
+
+#
+# enable history save, auto cd, completion and vi mode
+#
+
+HISTFILE="$XDG_CACHE_HOME/zsh/history"
+HISTSIZE=50000
+SAVEHIST=10000
+setopt appendhistory
+
+setopt auto_cd
+
+zstyle :compinstall filename '/home/owari/.config/zsh/.zshrc'
+autoload -Uz _store_cache compinit
+compinit -C -d "$XDG_CACHE_HOME/zsh/zcompdump"
+
+bindkey -v
 
 #
 # common-aliases replacement
@@ -62,17 +77,8 @@ alias glo="git log --oneline"
 
 alias z="j"
 
-
-alias csgo="cp -rf ~/Projects/code/csgo-cfg/autoexec.cfg ~/Projects/code/csgo-cfg/knifes ~/.local/share/Steam/userdata/254174168/730/local/cfg/."
-alias vps="TERM=xterm-256color ssh root@sabatini.xyz"
-alias vps2="TERM=xterm-256color ssh admin@echidna.ga"
-alias dpi="ratbagctl thundering-gerbil resolution 0 dpi"
-alias mbsync="mbsync -c \"$XDG_CONFIG_HOME/isync/mbsyncrc\""
-alias dolphin="DESKTOP_SESSION=kde dolphin"
-
-#unset GTK2_RC_FILES
-#export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
-#[[ -f ~/.gtkrc-2.0 ]] && rm ~/.gtkrc-2.0 > /dev/null 2>&1
+alias ssh="TERM=xterm-256color ssh"
+alias rat="ratbagctl $(ratbagctl list | awk -F : '{print $1}')"
 
 xset r rate 300 50
 

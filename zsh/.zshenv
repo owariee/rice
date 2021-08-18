@@ -5,7 +5,7 @@ export BROWSER="firefox"
 export EDITOR="nvim"
 export PAGER="less"
 export SHELL="/bin/zsh"
-export TERM="kitty"
+export TERM="alacritty"
 export VISUAL="$EDITOR"
 
 #--------------
