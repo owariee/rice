@@ -77,7 +77,6 @@ function horizon() {
 source /usr/share/doc/pkgfile/command-not-found.zsh
 source /usr/share/autojump/autojump.zsh
 source /opt/asdf-vm/asdf.sh
-source $XDG_CONFIG_HOME/zsh/horizon.zsh
 
 horizon zsh-users/zsh-autosuggestions
 horizon zsh-users/zsh-syntax-highlighting
@@ -86,8 +85,6 @@ horizon zsh-users/zsh-history-substring-search
 #
 # web-search from oh-my-zsh
 #
-
-# web_search from terminal
 
 function web_search() {
   emulate -L zsh
