@@ -79,9 +79,9 @@ source /usr/share/autojump/autojump.zsh
 source /opt/asdf-vm/asdf.sh
 source $XDG_CONFIG_HOME/zsh/horizon.zsh
 
-clone_repo zsh-users/zsh-autosuggestions
-clone_repo zsh-users/zsh-syntax-highlighting
-clone_repo zsh-users/zsh-history-substring-search
+horizon zsh-users/zsh-autosuggestions
+horizon zsh-users/zsh-syntax-highlighting
+horizon zsh-users/zsh-history-substring-search
 
 #
 # web-search from oh-my-zsh
