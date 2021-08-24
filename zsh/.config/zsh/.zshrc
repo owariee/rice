@@ -25,12 +25,15 @@ zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:git:*' formats " on  %b %{$fg[red]%}%m%u%c"
 
 # d to show full pwd
-PROMPT=$'\n'"%{$fg[magenta]%}%n@%m %{$fg[cyan]%}%3~%\%{$fg[yellow]%}\$vcs_info_msg_0_"$'\n'
-PROMPT+="%{$reset_color%}%{$fg_bold[green]%}➜ %{$reset_color%}"
+PROMPT=$'\n'"%{$fg[magenta]%}%n@%m %{$fg[cyan]%}%3~%\%{$fg[yellow]%}\$vcs_info_msg_0_"
+PROMPT+=$'\n'"%{$reset_color%}%{$fg_bold[green]%}➜ %{$reset_color%}"
 
 #
 # key bindings (emacs, viins, vicmd)
 #
+
+bindkey -e
+
 if (( ${+terminfo[smkx]} )) && (( ${+terminfo[rmkx]} )); then
   function zle-line-init() {
     echoti smkx
@@ -44,19 +47,22 @@ fi
 
 autoload -U up-line-or-beginning-search
 zle -N up-line-or-beginning-search
-bindkey -M viins "${terminfo[kcuu1]}" up-line-or-beginning-search
+bindkey -M emacs "${terminfo[kcuu1]}" up-line-or-beginning-search
 
 autoload -U down-line-or-beginning-search
 zle -N down-line-or-beginning-search
-bindkey -M viins "${terminfo[kcud1]}" down-line-or-beginning-search
+bindkey -M emacs "${terminfo[kcud1]}" down-line-or-beginning-search
 
-bindkey -M viins "${terminfo[khome]}" beginning-of-line
-bindkey -M viins "${terminfo[kend]}"  end-of-line
-bindkey -M viins "${terminfo[kcbt]}" reverse-menu-complete
-bindkey -M viins "${terminfo[kpp]}" up-line-or-history
-bindkey -M viins "${terminfo[knp]}" down-line-or-history
-bindkey -M viins '^[[1;5C' forward-word
-bindkey -M viins '^[[1;5D' backward-word
+bindkey "${terminfo[kcbt]}" reverse-menu-complete
+bindkey "${terminfo[kpp]}" up-line-or-history
+bindkey "${terminfo[knp]}" down-line-or-history
+bindkey '^[[1;5C' forward-word
+bindkey '^[[1;5D' backward-word
+
+bindkey "${terminfo[khome]}" beginning-of-line
+bindkey "${terminfo[kend]}" end-of-line
+bindkey "${terminfo[kdch1]}" delete-char
+bindkey -s '^o' 'nvim $(fzf)^M'
 
 #
 # horizon plugin manager
@@ -64,111 +70,42 @@ bindkey -M viins '^[[1;5D' backward-word
 #
 
 function horizon() {
-    REPO_NAME=$(echo $1 | awk -F / '{print $NF}')
-    REPO_DIR=$XDG_CACHE_HOME/zsh/plugins/$REPO_NAME
-    [ ! -d $REPO_DIR ] && git clone https://github.com/$1 $REPO_DIR
-    source "$REPO_DIR/$REPO_NAME.zsh"
+    REPO_DIR=$XDG_CACHE_HOME/zsh/plugins/$1
+    [ ! -d $REPO_DIR ] && git clone https://github.com/zsh-users/$1 $REPO_DIR
+    source "$REPO_DIR/$1.zsh"
 }
 
 #
 # source plugins
 #
 
-source /usr/share/doc/pkgfile/command-not-found.zsh
-source /usr/share/autojump/autojump.zsh
 source /opt/asdf-vm/asdf.sh
+source /usr/share/autojump/autojump.zsh
+source /usr/share/doc/pkgfile/command-not-found.zsh
 
-horizon zsh-users/zsh-autosuggestions
-horizon zsh-users/zsh-syntax-highlighting
-horizon zsh-users/zsh-history-substring-search
-
-#
-# web-search from oh-my-zsh
-#
-
-function web_search() {
-  emulate -L zsh
-
-  # define search engine URLS
-  typeset -A urls
-  urls=(
-    $ZSH_WEB_SEARCH_ENGINES
-    google      "https://www.google.com/search?q="
-    bing        "https://www.bing.com/search?q="
-    yahoo       "https://search.yahoo.com/search?p="
-    duckduckgo  "https://www.duckduckgo.com/?q="
-    startpage   "https://www.startpage.com/do/search?q="
-    yandex      "https://yandex.ru/yandsearch?text="
-    github      "https://github.com/search?q="
-    baidu       "https://www.baidu.com/s?wd="
-    ecosia      "https://www.ecosia.org/search?q="
-    goodreads   "https://www.goodreads.com/search?q="
-    qwant       "https://www.qwant.com/?q="
-    givero      "https://www.givero.com/search?q="
-    stackoverflow  "https://stackoverflow.com/search?q="
-    wolframalpha   "https://www.wolframalpha.com/input/?i="
-    archive     "https://web.archive.org/web/*/"
-    scholar        "https://scholar.google.com/scholar?q="
-  )
-
-  # check whether the search engine is supported
-  if [[ -z "$urls[$1]" ]]; then
-    echo "Search engine '$1' not supported."
-    return 1
-  fi
-
-  # search or go to main page depending on number of arguments passed
-  if [[ $# -gt 1 ]]; then
-    # build search url:
-    # join arguments passed with '+', then append to search engine URL
-    url="${urls[$1]}${(j:+:)@[2,-1]}"
-  else
-    # build main page url:
-    # split by '/', then rejoin protocol (1) and domain (2) parts with '//'
-    url="${(j://:)${(s:/:)urls[$1]}[1,2]}"
-  fi
-
-  open_command "$url"
-}
-
-alias bing='web_search bing'
-alias google='web_search google'
-alias yahoo='web_search yahoo'
-alias ddg='web_search duckduckgo'
-alias sp='web_search startpage'
-alias yandex='web_search yandex'
-alias github='web_search github'
-alias baidu='web_search baidu'
-alias ecosia='web_search ecosia'
-alias goodreads='web_search goodreads'
-alias qwant='web_search qwant'
-alias givero='web_search givero'
-alias stackoverflow='web_search stackoverflow'
-alias wolframalpha='web_search wolframalpha'
-alias archive='web_search archive'
-alias scholar='web_search scholar'
-
-#add your own !bang searches here
-alias wiki='web_search duckduckgo \!w'
-alias news='web_search duckduckgo \!n'
-alias youtube='web_search duckduckgo \!yt'
-alias map='web_search duckduckgo \!m'
-alias image='web_search duckduckgo \!i'
-alias ducky='web_search duckduckgo \!'
-
-# other search engine aliases
-if [[ ${#ZSH_WEB_SEARCH_ENGINES} -gt 0 ]]; then
-  typeset -A engines
-  engines=($ZSH_WEB_SEARCH_ENGINES)
-  for key in ${(k)engines}; do
-    alias "$key"="web_search $key"
-  done
-  unset engines key
-fi
-
+horizon zsh-autosuggestions
+horizon zsh-history-substring-search
+horizon zsh-syntax-highlighting
 
 #
-# enable history save, auto cd, completion and vi mode
+# web-search from oh-my-zsh cutted, splited, sliced, ripped!
+#
+
+function web_search() { xdg-open "$1${(j:+:)@[2,-1]}" }
+
+alias google='web_search "https://www.google.com/search?q="'
+alias ddg='web_search "https://www.duckduckgo.com/?q="'
+
+alias wiki='ddg \!w'
+alias news='ddg \!n'
+alias yt='ddg \!yt'
+alias map='ddg \!m'
+alias image='ddg \!i'
+alias ducky='ddg \!'
+alias cppr='ddg \!cpp'
+
+#
+# enable history save, auto cd, completion
 #
 
 HISTFILE="$XDG_CACHE_HOME/zsh/history"
@@ -184,21 +121,20 @@ zmodload zsh/complist
 compinit -C -d "$XDG_CACHE_HOME/zsh/zcompdump"
 _comp_options+=(globdots)
 
-bindkey -v
-
 #
 # common-aliases replacement
 #
 
-alias ls="exa --icons -a --group-directories-first"
-alias l="ls -lfh"
-alias lt="ls -ltFh"
+alias ls="exa --icons --group-directories-first -F"
+alias l="ls"
 alias ll="ls -l"
+alias la="ls -a"
+alias lla="ls -la"
 alias ldot="ls -ld .*"
 
 alias grep="grep --color"
 
-alias rm='rm -i'
+alias rm='trash -i'
 alias cp='cp -i'
 alias mv='mv -i'
 
@@ -235,7 +171,6 @@ alias ssh="TERM=xterm-256color ssh"
 alias rat="ratbagctl $(ratbagctl list | awk -F : '{print $1}')"
 
 alias zshrc="nvim ~/rice/zsh/.config/zsh/.zshrc"
-alias hzedit="nvim ~/rice/zsh/.config/zsh/horizon.zsh"
 
 xset r rate 300 50
 
