@@ -1,0 +1,60 @@
+#!/bin/zsh
+
+block0=($(seq 0x00a0 0x00af))
+block1=($(seq 0x2030 0x204f))
+block2=($(seq 0x2120 0x213f))
+block3=($(seq 0x2190 0x21af))
+block4=($(seq 0x2310 0x232f))
+block5=($(seq 0x23c0 0x23cf))
+block6=($(seq 0x23f0 0x23ff))
+block7=($(seq 0x24c0 0x24cf))
+block8=($(seq 0x25a0 0x25cf))
+block9=($(seq 0x25f0 0x267f))
+block10=($(seq 0x2690 0x26cf))
+block11=($(seq 0x26d0 0x276f))
+block12=($(seq 0x2790 0x27bf))
+block13=($(seq 0x2930 0x293f))
+block14=($(seq 0x2b00 0x2b1f))
+block15=($(seq 0x2b50 0x2b5f))
+block16=($(seq 0x3030 0x303f))
+block17=($(seq 0x3290 0x329f))
+block18=($(seq 0x1f000 0x1f00f))
+block19=($(seq 0x1f0c0 0x1f0cf))
+block20=($(seq 0x1f170 0x1f23f))
+block21=($(seq 0x1f250 0x1f25f))
+block22=($(seq 0x1f300 0x1f64f))
+block23=($(seq 0x1f680 0x1f6ff))
+block24=($(seq 0x1f7e0 0x1f7ef))
+block25=($(seq 0x1f900 0x1f9ff))
+block26=($(seq 0x1fa70 0x1fadf))
+
+for i in $(seq 0 26); do blocks+=(block$i); done
+
+for j in $blocks
+do
+    echo "\n---$j-------------------------------------------------------------------------------------------------------------------------"
+    for z in $(seq 0 15)
+    do
+        buffer2=$(printf "%02X" "$z")
+        echo -n "\t$buffer2"
+    done
+    count=0
+    echo ""
+    for t in ${(P)j}
+    do
+        buffer=$(printf "%X" "$t")
+        if (( count == 0 ))
+        then
+            echo -n "U+$buffer\t\U$buffer"
+        else
+            echo -n "\t\U$buffer"
+        fi
+        count=$((++count))
+        if (( count > 15 ))
+        then
+            echo ""
+            count=0
+        fi
+    done
+done
+
