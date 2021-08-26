@@ -1,0 +1,24 @@
+{
+    "editor.fontSize": 16,
+    "git.ignoreMissingGitWarning": true,
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
+    "editor.rulers": [
+        100
+    ],
+    "workbench.iconTheme": "material-icon-theme",
+    "editor.fontFamily": "\"SF Mono\"",
+    "cmake.configureOnOpen": true,
+    "tailwindCSS.includeLanguages": {
+        "plaintext": "html"
+    },
+    "editor.minimap.enabled": false,
+    "editor.renderLineHighlight": "none",
+    "debug.allowBreakpointsEverywhere": true,
+    "workbench.editor.enablePreview": false,
+    "workbench.colorTheme": "Horizon",
+    "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
+    "editor.lineNumbers": "relative",
+    "window.zoomLevel": 1
+}
