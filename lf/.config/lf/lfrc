@@ -1,0 +1,21 @@
+set previewer ~/.config/lf/preview
+
+cmd dragon %{{
+    IFS="`printf '\n\t'`"; dragon $fx
+}}
+
+cmd wallpaper %xwallpaper --center $f
+
+cmd chmod644 %IFS="`printf '\n\t'`"; chown owari:owari $fx; chmod 644 $fx
+cmd chmod755 %IFS="`printf '\n\t'`"; chown owari:owari $fx; chmod 755 $fx
+cmd sxiv %sxiv -t .
+
+map <down> :down; reload
+map <up> :up; reload
+map . :set hidden!
+map D :delete
+map W :wallpaper
+map P :chmod644
+map S :sxiv
+
+set icons
