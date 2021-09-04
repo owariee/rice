@@ -6,7 +6,7 @@ Plug 'glepnir/lspsaga.nvim'                             " Already has config
 Plug 'ray-x/lsp_signature.nvim'                         " Already has config
 Plug 'jackguo380/vim-lsp-cxx-highlight'
 
-Plug 'Yggdroot/indentLine'                              " Already has config
+"Plug 'Yggdroot/indentLine'                              " Already has config
 Plug 'itchyny/lightline.vim'                            " Already has config
 Plug 'preservim/nerdtree'                               " Already has config
 Plug 'Xuyuanp/nerdtree-git-plugin'                      " Already has config
@@ -61,7 +61,7 @@ let g:lightline.subseparator = { 'left': '', 'right': '' }
 
 " Tokyo Night
 set termguicolors
-let g:tokyonight_style = 'night' " available: night, storm
+let g:tokyonight_style = 'storm' " available: night, storm
 let g:tokyonight_enable_italic = 1
 colorscheme tokyonight
 
@@ -115,15 +115,20 @@ set hidden
 set relativenumber 
 set clipboard+=unnamedplus
 set expandtab
-set tabstop=4
+set tabstop=2
 set shiftwidth=0
 set nosmarttab
 set mouse=a
 set re=0
-set listchars=eol:⏎,tab:-.,trail:·,extends:>,precedes:<
+"set listchars=eol:⏎,tab:-.,trail:·,extends:>,precedes:<
 set list
 set numberwidth=6
 set colorcolumn=120
+
+"highlight Normal guibg=none
+"highlight NonText guibg=none
+"highlight EndOfBuffer guibg=none
+"highlight GitGutterAdd guibg=none 
 
 nnoremap <silent> <Leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
 nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
