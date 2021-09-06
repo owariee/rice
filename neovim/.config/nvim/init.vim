@@ -61,7 +61,7 @@ let g:lightline.subseparator = { 'left': '', 'right': '' }
 
 " Tokyo Night
 set termguicolors
-let g:tokyonight_style = 'storm' " available: night, storm
+let g:tokyonight_style = 'night' " available: night, storm
 let g:tokyonight_enable_italic = 1
 colorscheme tokyonight
 
@@ -125,10 +125,10 @@ set list
 set numberwidth=6
 set colorcolumn=120
 
-"highlight Normal guibg=none
-"highlight NonText guibg=none
-"highlight EndOfBuffer guibg=none
-"highlight GitGutterAdd guibg=none 
+highlight Normal guibg=none
+highlight NonText guibg=none
+highlight EndOfBuffer guibg=none
+highlight GitGutterAdd guibg=none 
 
 nnoremap <silent> <Leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
 nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>

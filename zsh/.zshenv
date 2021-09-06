@@ -26,6 +26,9 @@ export XDG_RUNTIME_DIR="/run/user/1000"
 export XDG_TEMPLATES_DIR="$HOME/Templates"
 export XDG_VIDEOS_DIR="$HOME/Videos"
 
+export XDG_CURRENT_DESKTOP="sway"
+export MOZ_ENABLE_WAYLAND=1
+
 #-------------------
 # Why not default??
 
@@ -174,4 +177,11 @@ ex=🎯:\
 # Start X.Org
 
 #[ "$(tty)" = "/dev/tty1" ] && startx
+
+#---------------
+# Start Wayland
+
+if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
+  exec sway
+fi
 
