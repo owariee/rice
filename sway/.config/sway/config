@@ -140,17 +140,33 @@ bindsym $mod+r mode "resize"
 bar {
     position top
 
-    status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
+    status_command while sway-status-command; do sleep 1; done
 
     colors {
         statusline #ffffff
         background #323232
-        inactive_workspace #32323200 #32323200 #5c5c5c
+        inactive_workspace #323232 #323232 #999999
+        focused_workspace  #323232 #3c74b7 #ffffff
+        active_workspace #323232 #3c74b750 #cccccc
     }
 }
 
 default_border pixel 2
 gaps inner 5
+
+# Set colors
+set $bg #171717
+set $fg #eff1f5
+set $br #ffcc00
+set $ia #232425
+
+# class                 border  backgr. text    indicator child_border
+client.focused          $br     $br     $fg     $bg       $br
+client.focused_inactive $bg     $bg     $fg     $bg       $bg
+client.unfocused        $bg     $bg     $fg     $bg       $bg
+#client.urgent          $br     $br     $fg     $bg       $br #currently not implemented
+#client.placeholder     $br     $br     $fg     $bg       $br #currently not implemented
+client.background $bg
 
 output DP-2 mode 1920x1080@144Hz pos 0 0
 output DVI-D-1 mode 1336x768 pos 1920 670
