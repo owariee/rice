@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+# --use-gl=desktop
+chromium-freeworld --use-angle=vulkan --enable-vulkan --enable-zero-copy --enable-gpu-rasterization --enable-oop-rasterization --enable-oop-rasterization-ddl --ignore-gpu-blocklist --disable-gpu-driver-workarounds --enable-accelerated-video-decode &

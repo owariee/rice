@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+[ -z "$1" ] && exit
+perf record -F 99 -p $1 -g -- sleep 60
+perf script > ~/Projects/FlameGraph/out.perf
+~/Projects/FlameGraph/stackcollapse-perf.pl out.perf > out.folded
+flamegraph-gen

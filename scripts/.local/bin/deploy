@@ -1,0 +1,3 @@
+#!/bin/sh
+
+scp install.sh required_packages.txt root@sabatini.xyz:/var/www/html/scripts

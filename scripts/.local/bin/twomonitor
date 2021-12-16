@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+MODE=$(gtf 1366 768 75 | grep -o "\".*$")
+RES=$(printf $MODE | grep -o "\".*\"")
+xrandr --newmode $MODE
+xrandr --addmode DVI-D-1 $RES
+xrandr --output DVI-D-1 --mode $RES --panning 1368x768+1920+672
+xrandr --output DP-2 --mode 1920x1080 --rate 144

@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+fluidsynth -nli -r 48000 -o synth.cpu-cores=$(nproc) -F "/tmp/$1.raw" /usr/share/soundfonts/FluidR3_GM.sf2 $1
+oggenc -r -B 16 -C 2 -R 48000 "/tmp/$1.raw" -o "$1.ogg"
+rm -rf "/tmp/$1.raw"
+ffmpeg -i "$1.ogg" -c:a libopus -b:a 96K "$1.opus"
+rm -rf "$1.ogg"
+mv "$1.opus" "$(echo $1 | sed 's/\.mid/-mid/').opus"

@@ -1,0 +1,2 @@
+#!/usr/bin/env sh
+watch -n 1 "pacmd list-sinks | grep 'latency: [1-9]'"

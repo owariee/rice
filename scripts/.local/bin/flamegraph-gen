@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+~/Projects/FlameGraph/flamegraph.pl out.folded > kernel.svg
+google-chrome ~/Projects/FlameGraph/kernel.svg

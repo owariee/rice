@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+OPTIONS=$(echo -e "Shutdown\nReboot" | dmenu -i -l 2 -p "You want: ")
+
+[ "$OPTIONS" == "Shutdown" ] && shutdown now
+[ "$OPTIONS" == "Reboot" ] && shutdown -r now

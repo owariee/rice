@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+SHORTCUT="$XDG_DATA_HOME/pass"
+
+FILE=$(find $SHORTCUT -name '*.gpg' | dmenu -i -l 30 -p "Select a file:")
+pass -c $FILE
