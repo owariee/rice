@@ -1,0 +1,9 @@
+xinput --set-prop 'Logitech G403 Prodigy Gaming Mouse' 'libinput Accel Profile Enabled' 0, 1 &
+xrandr --output DisplayPort-1 --mode 1920x1080 --rate 144 --output DVI-D-0 --mode 1366x768 --pos 1920x670
+setxkbmap -model pc104 -layout us,us,us -variant ,alt-intl,colemak -option caps:swapescape -option grp:menu_toggle &
+conky -c $HOME/.config/conky/doom-one-01.conkyrc &
+xcompmgr &
+sxhkd &
+xfce4-clipman &
+xwallpaper --center ~/.cache/wallpaper.png &
+exec i3
