@@ -1,0 +1,72 @@
+super + Return
+  kitty
+
+super + d
+  dmenu_run
+
+super + b
+  firefox
+
+super + t
+  thunar
+
+super + c
+  code
+
+super + a
+  atom
+
+Print
+  maim -s | xclip -selection clipboard -t image/png
+
+super + {F2,F3}
+  pactl set-sink-volume @DEFAULT_SINK@ {-,+}10% && killall -SIGUSR1 i3status
+
+super + {F1,F4}
+  pactl set-{source,sink}-mute @DEFAULT_SINK@ toggle && killall -SIGUSR1 i3status
+
+super + q
+  i3-msg kill
+
+super + {h,j,k,l}
+  i3-msg focus {left,down,up,right}
+
+super + shift + {h,j,k,l}
+  i3-msg move {left,down,up,right}
+
+super + {0-9}
+  i3-msg workspace number {10,1,2,3,4,5,6,7,8,9}
+
+super + shift + {0-9}
+  i3-msg move container to workspace number {10,1,2,3,4,5,6,7,8,9}
+
+super + f
+  i3-msg fullscreen toggle
+
+super + shift + space
+  i3-msg floating toggle
+
+super + space
+  i3-msg focus mode_toggle
+
+super + shift + {c,r,e}
+  i3-msg {reload, restart, exit}
+
+super + {s,w,e}
+  i3-msg layout {stacking,tabbed,toggle split}
+
+super + {h,v}
+  i3-msg split {h,v}
+
+super + {a,d}
+  i3-msg focus {parent,child}
+
+control + {h,j,k,l}
+  i3-msg resize {shrink width, grow height, shrink height, grow width} 10 px or 10 ppt
+
+super + shift + minus
+  i3-msg move scratchpad
+
+super + minus
+  i3-msg scratchpad show
+

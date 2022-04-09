@@ -1,0 +1,10 @@
+font pango:monospace 8
+
+floating_modifier Mod1
+bindsym 1 workspace
+
+bar {
+        position top
+        status_command i3status
+}
+
