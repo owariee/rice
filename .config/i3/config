@@ -1,7 +1,7 @@
 font pango:monospace 8
 
 floating_modifier Mod1
-bindsym 1 workspace
+bindsym Mod1+1 workspace
 
 bar {
         position top

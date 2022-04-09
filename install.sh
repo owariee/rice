@@ -2,7 +2,7 @@
 cd .config
 for d in */
 do
-  [ -z ~/.config/$d ] && rm -rf ~/.config/$d
-  ln -sf $(pwd)/$d ~/.config/$d
+  [[ -d ~/.config/$d ]] && rm -rf ~/.config/$d
+  ln -sf $(pwd)/$d ~/.config
   echo "Symlink created for ${d%/}!"
 done
