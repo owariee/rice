@@ -1,7 +1,7 @@
+# i3 config file (v4)
 font pango:monospace 8
 
 floating_modifier Mod1
-bindsym Mod1+1 workspace
 
 bar {
         position top
