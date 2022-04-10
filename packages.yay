@@ -1,6 +1,9 @@
 amd-ucode
 arc-gtk-theme
+arduino
 atom
+avr-gcc
+avrdude
 base
 bc
 cmake
@@ -9,6 +12,7 @@ conky
 dmenu
 docker
 docker-compose
+dunst
 efibootmgr
 engrampa
 feh
@@ -40,9 +44,12 @@ maim
 man-db
 materia-gtk-theme
 mesa-vdpau
+mpd
 mpv
+ncmpcpp
 neofetch
 neovim
+network-manager-applet
 networkmanager
 noto-fonts
 noto-fonts-cjk
@@ -60,7 +67,10 @@ pipewire-alsa
 pipewire-pulse
 pulsemixer
 qbittorrent
+qpwgraph
+redshift
 ruby
+slock
 stow
 supertuxkart
 sxhkd
@@ -71,7 +81,9 @@ thunar-media-tags-plugin
 thunar-volman
 ttf-fira-code
 tumbler
+unclutter
 unrar
+usbutils
 vulkan-extra-layers
 vulkan-extra-tools
 vulkan-html-docs
@@ -86,5 +98,6 @@ xorg-server
 xorg-xinit
 xorg-xinput
 xorg-xrandr
+xss-lock
 xwallpaper
 yay
