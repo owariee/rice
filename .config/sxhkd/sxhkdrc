@@ -1,3 +1,9 @@
+super + o
+  flatpak run com.obsproject.Studio
+
+super + p
+  passmenu
+
 super + Return
   kitty
 
@@ -52,8 +58,8 @@ super + space
 super + shift + {c,r,e}
   i3-msg {reload, restart, exit}
 
-super + {s,w,e}
-  i3-msg layout {stacking,tabbed,toggle split}
+#super + {s,w,e}
+#  i3-msg layout {stacking,tabbed,toggle split}
 
 super + {h,v}
   i3-msg split {h,v}

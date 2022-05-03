@@ -103,7 +103,9 @@ ${goto 12}${color1}${top_mem name 3}$alignr$color${top_mem mem_res 3}
 ${voffset 18}${color1}${alignc}${font4}SXHKD KEYBINDINGS${font}${color}
 ${color1}${hr}${color}
 ${color1}[S]+[RET]${alignr}${color2}open kitty${color}
+${color1}[S]+o${alignr}${color2}open obs${color}
 ${color1}[S]+d${alignr}${color2}open dmenu${color}
+${color1}[S]+p${alignr}${color2}open passmenu${color}
 ${color1}[S]+b${alignr}${color2}open firefox${color}
 ${color1}[S]+t${alignr}${color2}open thunar${color}
 ${color1}[S]+c${alignr}${color2}open code${color}

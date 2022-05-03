@@ -3,7 +3,10 @@ xinput --set-prop 'Logitech G403 Prodigy Gaming Mouse' 'libinput Accel Profile E
 # Configure 2 monitor, resolution, position and refresh rate
 xrandr --output DisplayPort-1 --mode 1920x1080 --rate 144 --output DVI-D-0 --mode 1366x768 --pos 1920x670
 # Configure my input layouts
-setxkbmap -model pc104 -layout us,us,us -variant ,alt-intl,colemak -option caps:swapescape -option grp:menu_toggle &
+# setxkbmap -model pc104 -layout us,us,us -variant ,alt-intl,colemak -option caps:swapescape -option grp:menu_toggle & # FOR PROGRAMMING
+setxkbmap -model pc104 -layout us -variant alt-intl & # FOR GAMING
+# Start digital vibrance for games
+vibrantLinux --hidden &
 # Enhance typing speed
 xset r rate 300 50 &
 # Start conky, so i never forget the keybindings
@@ -30,6 +33,8 @@ mpd &
 xss-lock --transfer-sleep-lock -- slock &
 # Load xresources
 xrdb ~/.config/x11/xresources
+# Enable xdg-desktop-portal-gtk 
+dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRESS DISPLAY XAUTHORITY
 # Start i3 window manager
 exec i3
 
