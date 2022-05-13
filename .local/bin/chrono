@@ -1,0 +1,51 @@
+#!/usr/bin/env node
+const argv = require('process').argv;
+const fs = require('fs');
+const homedir = require('os').homedir();
+
+function getEpochNow() {
+  return Math.floor(Date.now()/1000);
+}
+
+function displayInfo(time) {
+  const secondsDiff = getEpochNow() - time;
+  hoursSince = Math.floor(((secondsDiff/60)/60));
+  minutesSince = Math.floor((secondsDiff-(hoursSince*60*60))/60);
+  console.log(`${hoursSince} hours since.`);
+  console.log(`${minutesSince} minutes since.`);
+}
+
+function createFile(filePath, fileOptions) {
+  const timeNow = getEpochNow();
+  try {
+    fs.writeFileSync(filePath, timeNow.toString(), fileOptions);
+  } catch(err) {
+    console.log(err);
+  }
+  return timeNow;
+}
+
+function readFile(filePath, fileOptions) {
+  try {
+    return fs.readFileSync(filePath, fileOptions); 
+  } catch(err) {
+    return createFile(filePath, fileOptions);
+  }
+}
+
+function main() {
+  const filePath = homedir + '/chrono';
+  const fileOptions = 'utf8';
+  let fileData = null;
+
+  if(argv[2] === 'gen') {
+    fileData = createFile(filePath, fileOptions);
+  } else {
+    fileData = readFile(filePath, fileOptions);
+  }
+
+  displayInfo(fileData);
+}
+
+main();
+
