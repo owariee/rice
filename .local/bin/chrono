@@ -9,10 +9,10 @@ function getEpochNow() {
 
 function displayInfo(time) {
   const secondsDiff = getEpochNow() - time;
-  hoursSince = Math.floor(((secondsDiff/60)/60));
-  minutesSince = Math.floor((secondsDiff-(hoursSince*60*60))/60);
-  console.log(`${hoursSince} hours since.`);
-  console.log(`${minutesSince} minutes since.`);
+  daysSince = Math.floor(((secondsDiff/60)/60)/24);
+  hoursSince = Math.floor((secondsDiff/60)/60) - daysSince * 24;
+  minutesSince = Math.floor(secondsDiff/60) - hoursSince * 60 - daysSince * 24 * 60;
+  console.log(`${daysSince} days ${hoursSince} hours ${minutesSince} minutes since.`);
 }
 
 function createFile(filePath, fileOptions) {

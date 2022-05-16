@@ -1,0 +1,16 @@
+.local/bin/f2py
+.local/bin/f2py3
+.local/bin/f2py3.10
+.local/bin/image-similarity-measures
+.local/bin/imageio_download_bin
+.local/bin/imageio_remove_bin
+.local/bin/lsm2bin
+.local/bin/pbr
+.local/bin/skivi
+.local/bin/tiff2fsspec
+.local/bin/tiffcomment
+.local/bin/tifffile
+.local/bin/virtualenv
+.local/bin/virtualenv-clone
+.local/bin/virtualenvwrapper.sh
+.local/bin/virtualenvwrapper_lazy.sh
