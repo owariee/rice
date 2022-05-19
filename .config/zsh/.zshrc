@@ -155,6 +155,8 @@ alias vim="nvim"
 
 alias dnf="dnf -C"
 alias yay="yay --noconfirm"
+alias y="yay"
+alias p="doas pacman --noconfirm"
 
 alias g="git"
 alias ga="git add"
