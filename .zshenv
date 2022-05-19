@@ -173,6 +173,10 @@ ex=🎯:\
 *.java=♨:\
 "
 
+#----------------------------
+# Enable hidden files in fzf
+export FZF_DEFAULT_COMMAND="find -L"
+
 #-------------
 # Start X.Org
 
