@@ -16,3 +16,6 @@ do
   echo "Symlink created for ${d%/}!"
 done
 cd ..
+
+ln -sf $(pwd)/.zshenv ~/
+echo "Symlink created for .zshenv"

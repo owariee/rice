@@ -176,12 +176,5 @@ ex=🎯:\
 #-------------
 # Start X.Org
 
-#[ "$(tty)" = "/dev/tty1" ] && startx
-
-#---------------
-# Start Wayland
-
-if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
-  exec sway
-fi
+[ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ] && startx # or sway
 
