@@ -1,2 +1,0 @@
-#!/usr/bin/env bash
-xwinwrap -ni -s -nf -fs -b -un -argb -st -sp -nf -fdt -- mpv -wid WID --really-quiet --framedrop=vo --no-audio --panscan="1.0" /run/media/owari/7BCAA3A611CB0DC2/Videos/demon-slayer/s01e01.mkv

@@ -170,6 +170,7 @@ alias glo="git log --oneline"
 
 alias z="j"
 
+alias dd="doas dd bs=4M conv=fdatasync status=progress"
 alias ssh="TERM=xterm-256color ssh"
 alias rat="ratbagctl \$(ratbagctl list | awk -F : '{print $1}')"
 alias ytaudio="youtube-dl -x --audio-format opus --audio-quality 0"
