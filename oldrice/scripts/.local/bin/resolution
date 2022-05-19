@@ -1,6 +1,0 @@
-#!/bin/sh
-MODELN=$(gtf $1 $2 144 | tail -n 2 | cut -c 12-)
-MODE=$(echo $MODELN | awk '{print $1}')
-xrandr --newmode $MODELN
-xrandr --addmode DP-2 $MODE 
-xrandr --output DP-2 --mode $MODE 

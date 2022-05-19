@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-
-echo "$(sxiv -ot /mnt/media/Pictures/Wallpapers)" > ~/.config/wallpaper
-load-wallpaper

@@ -14,16 +14,16 @@ DATE_DIFF=$(echo "$DATE_DIFF - ($DAYS * 24 * 60 * 60)" | bc)
 HOURS=$(echo "24-($DATE_DIFF/60/60)" | bc)
 #DATE_DIFF=$(echo "$DATE_DIFF - ($HOURS * 60 * 60)" | bc)
 
-#CHALLENGE_REMAINING=$(echo "90-$DAYS" | bc)
+CHALLENGE_REMAINING=$(echo "90-$DAYS" | bc)
 
-#PERCENTAGE=$(echo "(1-($CHALLENGE_REMAINING/90))*100" | bc -l | cut -c -3 -)
+PERCENTAGE=$(echo "(1-($CHALLENGE_REMAINING/90))*100" | bc -l | cut -c -3 -)
 
 [ "$1" == "notify" ] && notify-send "$HOURS hours to next checkpoint." "Completed $DAYS days and $MONTHS months." && exit
 
 echo "Initial date: $(date -d @$DATE_OLD)"
 echo "$HOURS hours to next checkpoint."
 echo "Completed $DAYS days and $MONTHS months."
-#echo "Challenge duration: 90 days."
-#echo "Challenge remaining: $CHALLENGE_REMAINING/90 days."
-#echo "Challenge percentage: $PERCENTAGE%"
-#echo "Now date: $(date)"
+echo "Challenge duration: 90 days."
+echo "Challenge remaining: $CHALLENGE_REMAINING/90 days."
+echo "Challenge percentage: $PERCENTAGE%"
+echo "Now date: $(date)"

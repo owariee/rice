@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-OPTIONS="Toggle HDMI Output\nToggle Line Output\nToggle USB Output" 
-DPROMPT="Select an operation for ALSA: "
-RESULT=$(echo -e "$OPTIONS" | dmenu -i -l 10 -p "$DPROMPT")
-
-[ "$RESULT" == "Toggle HDMI Output" ] && amixer -c 1 set 'IEC958',3 toggle && exit
-[ "$RESULT" == "Toggle Line Output" ] && amixer -c 0 set 'Master',0 toggle && exit
-[ "$RESULT" == "Toggle USB Output" ] && amixer -c 2 set 'Speaker',0 toggle && exit
-

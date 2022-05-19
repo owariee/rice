@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-[ -z "$1" ] && exit
-python -m flamegraph -o ~/Projects/FlameGraph/out.folded $1
-flamegraph-gen

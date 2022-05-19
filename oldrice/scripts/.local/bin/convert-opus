@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-[ -z "$1" ] && exit
-echo $PWD
-ffmpeg -i $1 -c:a libopus -b:a 96K /tmp/$2 && mv /tmp/$2 .

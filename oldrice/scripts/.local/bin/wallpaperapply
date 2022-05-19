@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-
-xwallpaper --zoom "$(cat /mnt/media/Pictures/Wallpapers)"
