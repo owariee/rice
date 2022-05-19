@@ -26,14 +26,14 @@ export XDG_RUNTIME_DIR="/run/user/1000"
 export XDG_TEMPLATES_DIR="$HOME/Templates"
 export XDG_VIDEOS_DIR="$HOME/Videos"
 
-export XDG_CURRENT_DESKTOP="sway"
-export MOZ_ENABLE_WAYLAND=1
+#export XDG_CURRENT_DESKTOP="i3wm"
+#export MOZ_ENABLE_WAYLAND=0
 
 #-------------------
 # Why not default??
 
-export PATH="/usr/lib/ccache/bin/:$PATH:$HOME/.local/bin"
-export XCURSOR_PATH="$XCURSOR_PATH:$XDG_DATA_HOME/icons"
+export PATH="$HOME/.local/bin:/usr/lib/ccache/bin/:$PATH"
+#export XCURSOR_PATH="$XDG_DATA_HOME/icons:$XCURSOR_PATH"
 export STEAM_COMPAT_CLIENT_INSTALL_PATH="$XDG_DATA_HOME/Steam"
 
 #------
