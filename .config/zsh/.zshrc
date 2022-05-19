@@ -79,9 +79,9 @@ function horizon() {
 # source plugins
 #
 
-source /opt/asdf-vm/asdf.sh
+#source /opt/asdf-vm/asdf.sh
 source /usr/share/autojump/autojump.zsh
-source /usr/share/doc/pkgfile/command-not-found.zsh
+#source /usr/share/doc/pkgfile/command-not-found.zsh
 
 horizon zsh-autosuggestions
 horizon zsh-history-substring-search
@@ -147,8 +147,9 @@ alias -g NUL="> /dev/null 2>&1"
 alias -s lszip="unzip -l"
 alias -s lsrar="unrar l"
 alias -s lstar="tar tf"
-alias -s lsace="unace l"V
+alias -s lsace="unace l"
 
+alias v="nvim"
 alias vi="nvim"
 alias vim="nvim"
 
@@ -183,7 +184,5 @@ alias monitordisable="xrandr --output DVI-D-1 --off"
 alias nasm="nasm -f elf32 -o"
 alias ldasm="ld -m elf_i386 -o"
 
-alias zshrc="nvim ~/rice/zsh/.config/zsh/.zshrc"
-
-xset r rate 300 50
+alias zshrc="nvim ~/.config/zsh/.zshrc"
 
