@@ -25,3 +25,22 @@ CRONTAB_LOCATION="/var/spool/cron/$(whoami)"
 doas ln -sf $(pwd)/crontab /var/spool/cron/$(whoami)
 echo "Symlink created for crontab"
 
+FF_DIR="/home/$(whoami)/.mozilla/firefox"
+FF_PROFILES_PATH=(
+  $(sed -n '/^\[Profile.]$/,/^$/p' $FF_DIR/profiles.ini | grep 'Path' | cut -c 6-)
+)
+FF_VALID_PROFILES=()
+for f in ${FF_PROFILES_PATH[@]}; do
+  TMP_PROFILE_PATH=$FF_DIR/$f
+  if [[ -f $TMP_PROFILE_PATH/prefs.js ]]; then
+    FF_VALID_PROFILES+=($TMP_PROFILE_PATH)
+  fi
+done
+for v in ${FF_VALID_PROFILES[@]}; do
+  USERCHROME_DIR=$v/chrome
+  USERCHROME=$USERCHROME_DIR/userChrome.css
+  [[ ! -d $USERCHROME_DIR ]] && mkdir -p $USERCHROME_DIR
+  [[ -f $USERCHROME ]] && [[ ! -L $USERCHROME ]] && rm -rf $USERCHROME
+  ln -sf $(pwd)/userChrome.css $USERCHROME
+done
+
