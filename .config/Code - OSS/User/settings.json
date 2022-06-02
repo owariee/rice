@@ -1,0 +1,10 @@
+{
+    "workbench.colorTheme": "One Dark Pro Darker",
+    "editor.fontSize": 18,
+    "keyboard.dispatch": "keyCode",
+    "editor.rulers": [
+        100
+    ],
+    "window.zoomLevel": 1
+}
+
