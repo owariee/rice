@@ -1,7 +1,0 @@
-[user]
-    signingkey = C78F03ED3A6555E4
-    name = owarie
-    email = user962@yahoo.com
-[commit]
-    gpgsign = true
-
