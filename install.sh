@@ -19,3 +19,9 @@ cd ..
 
 ln -sf $(pwd)/.zshenv ~/
 echo "Symlink created for .zshenv"
+
+CRONTAB_LOCATION="/var/spool/cron/$(whoami)"
+[[ -f $CRONTAB_LOCATION ]] && doas rm -rf $CRONTAB_LOCATION
+doas ln -sf $(pwd)/crontab /var/spool/cron/$(whoami)
+echo "Symlink created for crontab"
+
