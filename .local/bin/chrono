@@ -1,51 +1,38 @@
-#!/usr/bin/env node
-const argv = require('process').argv;
-const fs = require('fs');
-const homedir = require('os').homedir();
+#!/usr/bin/env bash
+[ "$1" == "gen" ] && date +"%s" > ~/.cache/fap && exit
 
-function getEpochNow() {
-  return Math.floor(Date.now()/1000);
-}
+DATE_OLD=$(cat ~/.cache/fap)
+DATE_NOW=$(date +"%s")
+DATE_DIFF=$(echo "$DATE_NOW - $DATE_OLD" | bc)
 
-function displayInfo(time) {
-  const secondsDiff = getEpochNow() - time;
-  daysSince = Math.floor(((secondsDiff/60)/60)/24);
-  hoursSince = Math.floor((secondsDiff/60)/60) - daysSince * 24;
-  minutesSince = Math.floor(secondsDiff/60) - hoursSince * 60 - daysSince * 24 * 60;
-  console.log(`${daysSince} days ${hoursSince} hours ${minutesSince} minutes since.`);
-}
+MONTHS=$(echo "$DATE_DIFF/60/60/24/30" | bc)
+DATE_DIFF=$(echo "$DATE_DIFF - ($MONTHS * 30 * 24 * 60 * 60)" | bc)
 
-function createFile(filePath, fileOptions) {
-  const timeNow = getEpochNow();
-  try {
-    fs.writeFileSync(filePath, timeNow.toString(), fileOptions);
-  } catch(err) {
-    console.log(err);
-  }
-  return timeNow;
-}
+DAYS=$(echo "$DATE_DIFF/60/60/24" | bc)
+DATE_DIFF=$(echo "$DATE_DIFF - ($DAYS * 24 * 60 * 60)" | bc)
 
-function readFile(filePath, fileOptions) {
-  try {
-    return fs.readFileSync(filePath, fileOptions); 
-  } catch(err) {
-    return createFile(filePath, fileOptions);
-  }
-}
+HOURS=$(echo "$DATE_DIFF/60/60" | bc)
+DATE_DIFF=$(echo "$DATE_DIFF - ($HOURS * 60 * 60)" | bc)
 
-function main() {
-  const filePath = homedir + '/chrono';
-  const fileOptions = 'utf8';
-  let fileData = null;
+MINUTES=$(echo "$DATE_DIFF/60" | bc)
+DATE_DIFF=$(echo "$DATE_DIFF - ($MINUTES * 60)" | bc)
 
-  if(argv[2] === 'gen') {
-    fileData = createFile(filePath, fileOptions);
-  } else {
-    fileData = readFile(filePath, fileOptions);
-  }
+SECONDS=$DATE_DIFF
 
-  displayInfo(fileData);
-}
+PERCENTAGE=$(echo "($DAYS/90)*100" | bc -l | awk -F. '{print $1}')
 
-main();
+NEXT_CHECKPOINT=$(echo "24-$HOURS" | bc)
 
+COMPLETED_MSG=$(echo "Completed: $MONTHS months $DAYS days $HOURS hours $MINUTES minutes $SECONDS seconds.")
+NEXT_CHECKPOINT_MSG=$(echo "$NEXT_CHECKPOINT hours to next checkpoint.")
+
+[ "$1" == "notify" ] && notify-send "$NEXT_CHECKPOINT_MSG" "$COMPLETED_MSG" && exit
+[ "$1" == "simple" ] && echo "$DAYS/$MONTHS/$YEARS $HOURS:$MINUTES:$SECONDS" && exit
+
+echo "Initial date: $(date -d @$DATE_OLD)."
+echo "Now date: $(date)."
+echo "$COMPLETED_MSG"
+echo "Challenge duration: 90 days."
+echo "Challenge progress: $DAYS/90 days."
+echo "Challenge percentage: $PERCENTAGE%."
+echo "$NEXT_CHECKPOINT_MSG"
