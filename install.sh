@@ -18,12 +18,12 @@ done
 cd ..
 
 ln -sf $(pwd)/.zshenv ~/
-echo "Symlink created for .zshenv"
+echo "Symlink created for .zshenv!"
 
 CRONTAB_LOCATION="/var/spool/cron/$(whoami)"
 [[ -f $CRONTAB_LOCATION ]] && doas rm -rf $CRONTAB_LOCATION
 doas ln -sf $(pwd)/crontab /var/spool/cron/$(whoami)
-echo "Symlink created for crontab"
+echo "Symlink created for crontab!"
 
 FF_DIR="/home/$(whoami)/.mozilla/firefox"
 FF_PROFILES_PATH=(
@@ -42,5 +42,6 @@ for v in ${FF_VALID_PROFILES[@]}; do
   [[ ! -d $USERCHROME_DIR ]] && mkdir -p $USERCHROME_DIR
   [[ -f $USERCHROME ]] && [[ ! -L $USERCHROME ]] && rm -rf $USERCHROME
   ln -sf $(pwd)/userChrome.css $USERCHROME
+  echo "Symlink created for userChrome.css!"
 done
 
