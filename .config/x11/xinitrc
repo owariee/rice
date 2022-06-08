@@ -36,7 +36,7 @@ xrdb ~/.config/x11/xresources
 # Enable xdg-desktop-portal-gtk 
 dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRESS DISPLAY XAUTHORITY
 # Start transmission-daemon
-transmission-daemon &
+# transmission-daemon &
 # Start i3 window manager
 exec i3
 

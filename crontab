@@ -1,1 +1,1 @@
-*/1 * * * * eval "export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus"; /home/owari/.local/bin/chrono notify
+*/3 * * * * eval "export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus"; /home/owari/.local/bin/chrono notify
