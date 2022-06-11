@@ -1,68 +1,68 @@
-super + o
+alt + o
   flatpak run com.obsproject.Studio
 
-super + p
+alt + p
   passmenu
 
-super + Return
+alt + Return
   kitty
 
-super + d
+alt + d
   dmenu_run
 
-super + b
+alt + b
   firefox
 
-super + t
+alt + t
   thunar
 
-super + c
+alt + c
   code
 
-super + a
+alt + a
   atom
 
 Print
   maim -s | xclip -selection clipboard -t image/png
 
-super + {F2,F3}
+alt + {F2,F3}
   pactl set-sink-volume @DEFAULT_SINK@ {-,+}10% && killall -SIGUSR1 i3status
 
-super + {F1,F4}
+alt + {F1,F4}
   pactl set-{source,sink}-mute @DEFAULT_SINK@ toggle && killall -SIGUSR1 i3status
 
-#alt + q
-#  i3-msg kill
+alt + q
+  i3-msg kill
 
-#alt + {h,j,k,l}
-#  i3-msg focus {left,down,up,right}
+alt + {h,j,k,l}
+  i3-msg focus {left,down,up,right}
 
-#alt + shift + {h,j,k,l}
-#  i3-msg move {left,down,up,right}
+alt + shift + {h,j,k,l}
+  i3-msg move {left,down,up,right}
 
-#alt + {0-9}
-#  i3-msg workspace number {10,1,2,3,4,5,6,7,8,9}
+alt + {0-9}
+  i3-msg workspace number {10,1,2,3,4,5,6,7,8,9}
 
-#alt + shift + {0-9}
-#  i3-msg move container to workspace number {10,1,2,3,4,5,6,7,8,9}
+alt + shift + {0-9}
+  i3-msg move container to workspace number {10,1,2,3,4,5,6,7,8,9}
 
-#alt + f
-#  i3-msg fullscreen toggle
+alt + f
+  i3-msg fullscreen toggle
 
-#alt + shift + space
-#  i3-msg floating toggle
+alt + shift + space
+  i3-msg floating toggle
 
-#alt + space
-#  i3-msg focus mode_toggle
+alt + space
+  i3-msg focus mode_toggle
 
-#alt + shift + {c,r,e}
-#  i3-msg {reload, restart, exit}
+alt + shift + {c,r,e}
+  i3-msg {reload, restart, exit}
 
-#alt + {s,w,e}
-#  i3-msg layout {stacking,tabbed,toggle split}
+alt + {s,w,e}
+  i3-msg layout {stacking,tabbed,toggle split}
 
-#alt + {h,v}
-#  i3-msg split {h,v}
+alt + {h,v}
+  i3-msg split {h,v}
 
 #alt + {a,d}
 #  i3-msg focus {parent,child}
@@ -70,9 +70,9 @@ super + {F1,F4}
 control + {h,j,k,l}
   i3-msg resize {shrink width, grow height, shrink height, grow width} 10 px or 10 ppt
 
-#alt + shift + minus
-#  i3-msg move scratchpad
+alt + shift + minus
+  i3-msg move scratchpad
 
-#alt + minus
-#  i3-msg scratchpad show
+alt + minus
+  i3-msg scratchpad show
 
