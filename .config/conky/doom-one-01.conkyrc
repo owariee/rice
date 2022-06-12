@@ -109,7 +109,6 @@ ${color1}[S]+p${alignr}${color2}open passmenu${color}
 ${color1}[S]+b${alignr}${color2}open firefox${color}
 ${color1}[S]+t${alignr}${color2}open thunar${color}
 ${color1}[S]+c${alignr}${color2}open code${color}
-${color1}[S]+a${alignr}${color2}open atom${color}
 ${color1}[S]+F1${alignr}${color2}microphone mute${color}
 ${color1}[S]+F2${alignr}${color2}volume down${color}
 ${color1}[S]+F3${alignr}${color2}volume up${color}

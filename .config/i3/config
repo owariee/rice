@@ -3,7 +3,53 @@ font pango:monospace 12
 
 set $mod Mod1
 
+set $ws1 1
+set $ws2 2
+set $ws3 3
+set $ws4 4
+set $ws5 5
+set $ws6 6
+set $ws7 7
+set $ws8 8
+set $ws9 9
+set $ws10 10
+set $ws11 11
+set $ws12 12
+set $ws13 13
+set $ws14 14
+set $ws15 15
+set $ws16 16
+set $ws17 17
+set $ws18 18
+set $ws19 19
+set $ws20 20
+
 floating_modifier $mod
+
+set $Lmon DisplayPort-1
+set $Rmon DVI-D-0
+ 
+workspace $ws1 output $Lmon
+workspace $ws2 output $Lmon
+workspace $ws3 output $Lmon
+workspace $ws4 output $Lmon
+workspace $ws5 output $Lmon
+workspace $ws6 output $Lmon
+workspace $ws7 output $Lmon
+workspace $ws8 output $Lmon
+workspace $ws9 output $Lmon
+workspace $ws10 output $Lmon
+
+workspace $ws11 output $Rmon
+workspace $ws12 output $Rmon
+workspace $ws13 output $Rmon
+workspace $ws14 output $Rmon
+workspace $ws15 output $Rmon
+workspace $ws16 output $Rmon
+workspace $ws17 output $Rmon
+workspace $ws18 output $Rmon
+workspace $ws19 output $Rmon
+workspace $ws20 output $Rmon
 
 #bindsym $mod+q kill
 #
@@ -60,8 +106,24 @@ floating_modifier $mod
 #bindsym $mod+Shift+minus move scratchpad
 #bindsym $mod+minus scratchpad show
 
-bar {
-        position top
-        status_command i3status
-}
+#bar {
+#        position top
+#        status_command i3status
+#}
+#
 
+# class                 border  backgr. text    indicator child_border
+client.focused          #000000 #000000 #000000 #c678dd   #51afef
+client.focused_inactive #000000 #000000 #000000 #c678dd   #282c34
+client.unfocused        #000000 #000000 #000000 #c678dd   #222222
+client.urgent           #000000 #000000 #000000 #c678dd   #900000
+client.placeholder      #000000 #000000 #000000 #c678dd   #0c0c0c
+client.background       #ffffff
+
+exec_always --no-startup-id MONITOR=DisplayPort-1 polybar owari
+exec_always --no-startup-id MONITOR=DVI-D-0 polybar owari
+
+for_window [class=".*"] border pixel 2
+
+gaps inner 20
+gaps top 46

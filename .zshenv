@@ -35,6 +35,7 @@ export XDG_VIDEOS_DIR="$HOME/Videos"
 export PATH="$HOME/.local/bin:/usr/lib/ccache/bin/:$PATH"
 #export XCURSOR_PATH="$XDG_DATA_HOME/icons:$XCURSOR_PATH"
 export STEAM_COMPAT_CLIENT_INSTALL_PATH="$XDG_DATA_HOME/Steam"
+export LC_ALL="en_US.UTF-8"
 
 #------
 # Dbus

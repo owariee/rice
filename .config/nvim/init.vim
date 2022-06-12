@@ -73,7 +73,7 @@ hi VimwikiHeader5 guifg=#7dcfff
 hi VimwikiHeader6 guifg=#e0af68
 let g:vimwiki_listsyms = '✗○◐●✓'
 let wiki = {}
-let wiki.path = '~/vimwiki/'
+let wiki.path = '/mnt/backup/vimwiki'
 let wiki.automatic_nested_syntaxes = 1
 let g:vimwiki_list = [wiki]
 

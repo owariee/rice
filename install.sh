@@ -46,8 +46,9 @@ for v in ${FF_VALID_PROFILES[@]}; do
 done
 
 AUTOLOGIN_DIR=/etc/systemd/system/getty@tty1.service.d
-AUTOLOGIN_FILE=$AUTLOGIN_DIR/autlogin.conf
-[[ ! -d $AUTOLOGIN_DIR ]] && mkdir -p $AUTOLOGIN_DIR
-[[ -f $AUTOLOGIN_FILE ]]  && [[ ! -L $AUTOLOGIN_FILE ]] && rm -rf $AUTOLOGIN_FILE
-ln -sf $(pwd)/autologin.conf $AUTOLOGIN_FILE
+AUTOLOGIN_FILE=$AUTOLOGIN_DIR/autologin.conf
+[[ ! -d $AUTOLOGIN_DIR ]] && doas mkdir -p $AUTOLOGIN_DIR
+[[ -f $AUTOLOGIN_FILE ]]  && [[ ! -L $AUTOLOGIN_FILE ]] && doas rm -rf $AUTOLOGIN_FILE
+ACTUAL_PWD=$(pwd)
+sudo -E ln -sf $ACTUAL_PWD/autologin.conf $AUTOLOGIN_FILE
 echo "Autologin enabled!"

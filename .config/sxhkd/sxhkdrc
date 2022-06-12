@@ -43,8 +43,14 @@ alt + shift + {h,j,k,l}
 alt + {0-9}
   i3-msg workspace number {10,1,2,3,4,5,6,7,8,9}
 
+alt + control + {0-9}
+  i3-msg workspace number {20,11,12,13,14,15,16,17,18,19}
+
 alt + shift + {0-9}
   i3-msg move container to workspace number {10,1,2,3,4,5,6,7,8,9}
+
+alt + control + shift + {0-9}
+  i3-msg move container to workspace number {20,11,12,13,14,15,16,17,18,19}
 
 alt + f
   i3-msg fullscreen toggle
@@ -61,14 +67,14 @@ alt + shift + {c,r,e}
 alt + {s,w,e}
   i3-msg layout {stacking,tabbed,toggle split}
 
-alt + {h,v}
+alt + {m,v}
   i3-msg split {h,v}
 
 #alt + {a,d}
 #  i3-msg focus {parent,child}
 
 control + {h,j,k,l}
-  i3-msg resize {shrink width, grow height, shrink height, grow width} 10 px or 10 ppt
+  i3-msg resize {grow width, grow height, shrink height, shrink width} 10 px or 10 ppt
 
 alt + shift + minus
   i3-msg move scratchpad
