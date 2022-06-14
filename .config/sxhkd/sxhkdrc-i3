@@ -1,0 +1,117 @@
+# launch programs
+
+alt + w
+  firefox
+
+alt + m
+  discord
+
+alt + f
+  thunar
+
+alt + c
+  code
+
+alt + e
+  libreoffice
+
+alt + n
+  kitty --class=music ncmpcpp
+
+alt + t
+  thunderbird
+
+alt + o
+  flatpak run com.obsproject.Studio
+
+alt + Return
+  kitty
+
+alt + g
+  gimp
+
+alt + q
+  qbittorrent
+
+alt + i
+  kitty --class=mixer pulsemixer
+
+alt + s
+  steam
+
+# direct usage
+
+alt + p
+  passmenu
+
+alt + d
+  dmenu_run
+
+alt + F10
+  setwall
+
+Print
+  maim -s | xclip -selection clipboard -t image/png
+
+alt + {F2,F3}
+  pactl set-sink-volume @DEFAULT_SINK@ {-,+}5%
+
+alt + {F1,F4}
+  pactl set-{source,sink}-mute @DEFAULT_SINK@ toggle
+
+alt + {F5,F6,F7,F8}
+  mpc {stop,prev,toggle,next}
+
+# i3wm related
+
+super + q
+  i3-msg kill
+
+super + {h,j,k,l}
+  i3-msg focus {left,down,up,right}
+
+super + shift + {h,j,k,l}
+  i3-msg move {left,down,up,right}
+
+super + {0-9}
+  i3-msg workspace number {10,1,2,3,4,5,6,7,8,9}
+
+super + control + {0-9}
+  i3-msg workspace number {20,11,12,13,14,15,16,17,18,19}
+
+super + shift + {0-9}
+  i3-msg move container to workspace number {10,1,2,3,4,5,6,7,8,9}
+
+super + control + shift + {0-9}
+  i3-msg move container to workspace number {20,11,12,13,14,15,16,17,18,19}
+
+super + f
+  i3-msg fullscreen toggle
+
+super + shift + space
+  i3-msg floating toggle
+
+super + space
+  i3-msg focus mode_toggle
+
+super + shift + {c,r,e}
+  i3-msg {reload, restart, exit}
+
+super + {s,w,e}
+  i3-msg layout {stacking,tabbed,toggle split}
+
+super + {m,v}
+  i3-msg split {h,v}
+
+super + {a,d}
+  i3-msg focus {parent,child}
+
+control + {h,j,k,l}
+  i3-msg resize {grow width, grow height, shrink height, shrink width} 10 px or 10 ppt
+
+super + shift + minus
+  i3-msg move scratchpad
+
+super + minus
+  i3-msg scratchpad show
+

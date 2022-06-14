@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+WALLPAPER=$(sxiv -fto /mnt/backup/wallpapers)
+WALLPAPER_FILE=/home/$(whoami)/.cache/wallpaper
+[[ ! -z "${WALLPAPER}" ]] && ln -sf $WALLPAPER $WALLPAPER_FILE && loadwall
+

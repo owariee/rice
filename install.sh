@@ -52,3 +52,18 @@ AUTOLOGIN_FILE=$AUTOLOGIN_DIR/autologin.conf
 ACTUAL_PWD=$(pwd)
 sudo -E ln -sf $ACTUAL_PWD/autologin.conf $AUTOLOGIN_FILE
 echo "Autologin enabled!"
+
+# create directories for mpd
+mkdir -p ~/.cache/mpd
+touch ~/.cache/mpd/db
+touch ~/.cache/mpd/pid
+touch ~/.cache/mpd/state
+touch ~/.cache/mpd/sticker.sql
+mkdir -p ~/.local/share/mpd/playlists
+
+# create directories for ncmpcpp
+mkdir -p ~/.cache/ncmpcpp
+mkdir -p ~/.local/share/ncmpcpp/lyrics
+ln -sf /mnt/backup/music /home/$(whoami)/Music
+echo "music player daemon setup!"
+

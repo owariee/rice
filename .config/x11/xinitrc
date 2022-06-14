@@ -18,7 +18,7 @@ sxhkd &
 # Start clipman so i can take prints to the clipboard
 xfce4-clipman &
 # Set a nice wallpaper
-xwallpaper --center ~/.cache/wallpaper.png &
+loadwall &
 # Start redshift for blue light filter
 redshift -l -22.90:-47.06 &
 # Start dunst for notifications
@@ -38,5 +38,5 @@ dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRESS DISPLAY XA
 # Start transmission-daemon
 # transmission-daemon &
 # Start i3 window manager
-exec i3
+exec bspwm
 

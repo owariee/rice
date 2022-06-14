@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+MONITOR_LIST=(
+  $(xrandr --listmonitors | awk '{print $4}' | tail -n +2 | sort -r)
+)
+
+for i in ${MONITOR_LIST[@]}; do
+  MONITOR=$i polybar -r owari &
+  sleep 1;
+done
