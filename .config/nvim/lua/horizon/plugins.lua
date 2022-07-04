@@ -47,12 +47,30 @@ return packer.startup(function(use)
   use "vimwiki/vimwiki"
   use "dhruvasagar/vim-table-mode"
   use "soywod/himalaya"
+  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
   -- Colorschemes
   use "folke/tokyonight.nvim"
   use "lunarvim/darkplus.nvim"
   use "morhetz/gruvbox"
   use "ghifarit53/tokyonight-vim"
+  use 'shaunsingh/moonlight.nvim'
+  use { "chrsm/paramount-ng.nvim", requires = { "rktjmp/lush.nvim" } }
+  use { 'bkegley/gloombuddy', requires = { 'tjdevries/colorbuddy.vim' } }
+  use 'tiagovla/tokyodark.nvim'
+  use 'frenzyexists/aquarium-vim'
+  use { "catppuccin/nvim", as = "catppuccin" }
+  use 'projekt0n/github-nvim-theme'
+  use 'yashguptaz/calvera-dark.nvim'
+  use 'Mofiqul/dracula.nvim'
+  use 'shaunsingh/nord.nvim'
+  use 'yonlu/omni.vim'
+  use 'marko-cerovac/material.nvim'
+  use "rafamadriz/neon"
+  use 'navarasu/onedark.nvim'
+  use 'glepnir/zephyr-nvim'
+  use 'olimorris/onedarkpro.nvim'
+  use 'NTBBloodbath/doom-one.nvim'
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin

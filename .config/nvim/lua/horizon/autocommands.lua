@@ -67,7 +67,7 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 vim.api.nvim_create_autocmd({ "BufWritePost" }, {
   pattern = { "init.lua" },
   callback = function()
-    vim.cmd "source ~/.config/nvim/init.vim"
+    vim.cmd "source ~/.config/nvim/init.lua"
   end
 })
 

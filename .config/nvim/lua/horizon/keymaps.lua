@@ -81,7 +81,9 @@ keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", opts)
 
 -- My maps
 keymap("n", "<leader>r", "<cmd>source ~/.config/nvim/init.lua<cr>", opts)
-keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
+keymap("n", "<leader>f", "<cmd>Telescope find_files hidden=true<cr>", opts)
+keymap("n", "<leader>b", "<cmd>Telescope buffers<cr>", opts)
+keymap("n", "<leader>p", "<cmd>Telescope projects hidden=true<cr>", opts)
 keymap("n", "<leader>m", "<cmd>Himalaya<cr>", opts)
 keymap("n", "<leader>n", "<cmd>NvimTreeToggle<cr>", opts)
 keymap("x", "<C-_>", "<Plug>(comment_toggle_linewise_visual)<cr>", opts)
