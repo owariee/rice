@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-xwallpaper --center ~/.cache/wallpaper &
+xwallpaper --zoom ~/.cache/wallpaper &

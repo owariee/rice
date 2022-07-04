@@ -10,17 +10,17 @@ vibrantLinux --hidden &
 # Enhance typing speed
 xset r rate 300 50 &
 # Start conky, so i never forget the keybindings
-conky -c $HOME/.config/conky/doom-one-01.conkyrc &
+#conky -c $HOME/.config/conky/doom-one-01.conkyrc &
 # Start desktop compositor
-picom & # xcompmgr or picom
+#picom & # xcompmgr or picom
 # Start sxhkd to handle keybindings
-sxhkd &
+#sxhkd &
 # Start clipman so i can take prints to the clipboard
 xfce4-clipman &
 # Set a nice wallpaper
 loadwall &
 # Start redshift for blue light filter
-redshift -l -22.90:-47.06 &
+#redshift -l -22.90:-47.06 &
 # Start dunst for notifications
 dunst &
 # Start unclutter to hide mouse
@@ -35,8 +35,12 @@ xss-lock --transfer-sleep-lock -- slock &
 xrdb ~/.config/x11/xresources
 # Enable xdg-desktop-portal-gtk 
 dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRESS DISPLAY XAUTHORITY
+# Start fcitx
+fcitx -d &
+# Start kdeconnect-indicator
+kdeconnect-indicator &
 # Start transmission-daemon
 # transmission-daemon &
 # Start i3 window manager
-exec bspwm
+exec startplasma-x11
 
