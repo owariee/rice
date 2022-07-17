@@ -1,1 +1,63 @@
-/home/owari/.config/sxhkd/sxhkdrc-i3
+# launch programs
+
+alt + w
+  firefox
+
+alt + m
+  discord
+
+alt + f
+  thunar
+
+alt + c
+  code
+
+alt + e
+  libreoffice
+
+alt + n
+  kitty --class=music ncmpcpp
+
+alt + t
+  thunderbird
+
+alt + o
+  flatpak run com.obsproject.Studio
+
+alt + Return
+  kitty
+
+alt + g
+  gimp
+
+alt + q
+  qbittorrent
+
+alt + i
+  kitty --class=mixer pulsemixer
+
+alt + s
+  steam
+
+# direct usage
+
+alt + p
+  passmenu
+
+alt + d
+  dmenu_run
+
+alt + F10
+  setwall
+
+Print
+  screenshot
+
+alt + {F2,F3}
+  pactl set-sink-volume @DEFAULT_SINK@ {-,+}5%
+
+alt + {F1,F4}
+  pactl set-{source,sink}-mute @DEFAULT_SINK@ toggle
+
+alt + {F5,F6,F7,F8}
+  mpc {stop,prev,toggle,next}

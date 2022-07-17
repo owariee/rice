@@ -42,5 +42,6 @@ kdeconnect-indicator &
 # Start transmission-daemon
 # transmission-daemon &
 # Start i3 window manager
-exec startplasma-x11
+exec gnome-session
+
 

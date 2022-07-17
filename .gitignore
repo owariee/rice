@@ -15,4 +15,8 @@
 .local/bin/virtualenvwrapper.sh
 .local/bin/virtualenvwrapper_lazy.sh
 .local/bin/lvim
+.local/bin/UTscapy
+.local/bin/colorz
+.local/bin/scapy
+.config/zathura/.zathura-light
 
