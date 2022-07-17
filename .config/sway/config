@@ -4,19 +4,18 @@ input "1133:49283:Logitech_G403_Prodigy_Gaming_Mouse" {
 	pointer_accel 0
 }
 
+input "3141:20484:SONiX_USB_DEVICE" {
+  xkb_model "pc104"
+  xkb_layout "us,us,us"
+  xkb_variant ",alt-intl,colemak"
+  xkb_options "caps:swapescape,grp:menu_toggle"
+}
+
 input type:keyboard {
   repeat_delay 300
   repeat_rate 50
 }
 
-input "3141:20484:SONiX_USB_DEVICE" {
-  xkb_model "pc104"
-  xkb_layout "us"
-  xkb_variant "alt-intl"
-  xkb_options "caps:escape"
-}
-
-# input "3141:20484:SONiX_USB_DEVICE" xkb_model "pc104"
 output DP-2 mode 1920x1080@144Hz pos 0 0
 output DVI-D-1 mode 1336x768 pos 1920 670
 output * bg ~/.cache/wallpaper fill
