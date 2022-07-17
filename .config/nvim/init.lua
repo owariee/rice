@@ -1,4 +1,5 @@
 require("horizon.plugins")
+require("horizon.fakeclip")
 require("horizon.impatient")
 require("horizon.gitsigns")
 require("horizon.lualine")

@@ -48,6 +48,7 @@ return packer.startup(function(use)
   use "dhruvasagar/vim-table-mode"
   use "soywod/himalaya"
   use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+  use "kana/vim-fakeclip"
 
   -- Colorschemes
   use "folke/tokyonight.nvim"
