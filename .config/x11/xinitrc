@@ -1,14 +1,14 @@
 # Disable mouse acceleration
-xinput --set-prop 'Logitech G403 Prodigy Gaming Mouse' 'libinput Accel Profile Enabled' 0, 1 &
+# xinput --set-prop 'Logitech G403 Prodigy Gaming Mouse' 'libinput Accel Profile Enabled' 0, 1 &
 # Configure 2 monitor, resolution, position and refresh rate
-xrandr --output DisplayPort-1 --mode 1920x1080 --rate 144 --output DVI-D-0 --mode 1366x768 --pos 1920x670
+# xrandr --output DisplayPort-1 --mode 1920x1080 --rate 144 --output DVI-D-0 --mode 1366x768 --pos 1920x670
 # Configure my input layouts
 # setxkbmap -model pc104 -layout us,us,us -variant ,alt-intl,colemak -option caps:swapescape -option grp:menu_toggle & # FOR PROGRAMMING
-setxkbmap -model pc104 -layout us -variant alt-intl & # FOR GAMING
+# setxkbmap -model pc104 -layout us -variant alt-intl & # FOR GAMING
 # Start digital vibrance for games
 vibrantLinux --hidden &
 # Enhance typing speed
-xset r rate 300 50 &
+# xset r rate 300 50 &
 # Start conky, so i never forget the keybindings
 #conky -c $HOME/.config/conky/doom-one-01.conkyrc &
 # Start desktop compositor
@@ -16,13 +16,13 @@ xset r rate 300 50 &
 # Start sxhkd to handle keybindings
 #sxhkd &
 # Start clipman so i can take prints to the clipboard
-xfce4-clipman &
+# xfce4-clipman &
 # Set a nice wallpaper
 loadwall &
 # Start redshift for blue light filter
 #redshift -l -22.90:-47.06 &
 # Start dunst for notifications
-dunst &
+# dunst &
 # Start unclutter to hide mouse
 unclutter &
 # Start nm-applet to configure network (proxy/vpn/dns/wifi)
@@ -42,6 +42,6 @@ kdeconnect-indicator &
 # Start transmission-daemon
 # transmission-daemon &
 # Start i3 window manager
-exec gnome-session
+exec startplasma-x11
 
 

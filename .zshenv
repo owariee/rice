@@ -187,11 +187,11 @@ export FZF_DEFAULT_COMMAND="find -L"
 
 #---------
 # Wayland
-export MOZ_ENABLE_WAYLAND=1
-export SDL_VIDEODRIVER=wayland
+# export MOZ_ENABLE_WAYLAND=1
+# export SDL_VIDEODRIVER=wayland
 
 #-------------
 # Start X.Org
 
-[ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ] && sway # or startx
+[ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ] && startx # or startx
 

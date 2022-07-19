@@ -8,7 +8,8 @@ input "3141:20484:SONiX_USB_DEVICE" {
   xkb_model "pc104"
   xkb_layout "us,us,us"
   xkb_variant ",alt-intl,colemak"
-  xkb_options "caps:swapescape,grp:menu_toggle"
+  # xkb_options "caps:swapescape,grp:menu_toggle"
+  xkb_options "caps:escape,grp:menu_toggle"
 }
 
 input type:keyboard {
@@ -41,10 +42,10 @@ set $ws3 3
 set $ws4 4
 set $ws5 5
 set $ws6 6
-set $ws7 7
-set $ws8 8
-set $ws9 9
-set $ws0 10
+# set $ws7 7
+# set $ws8 8
+# set $ws9 9
+# set $ws0 10
 
 set $left-monitor DP-2
 set $right-monitor DVI-D-1
@@ -53,12 +54,12 @@ workspace $ws1 output $left-monitor
 workspace $ws2 output $left-monitor
 workspace $ws3 output $left-monitor
 workspace $ws4 output $left-monitor
-workspace $ws5 output $left-monitor
-workspace $ws6 output $left-monitor
-workspace $ws7 output $right-monitor
-workspace $ws8 output $right-monitor
-workspace $ws9 output $right-monitor
-workspace $ws0 output $right-monitor
+workspace $ws5 output $right-monitor
+workspace $ws6 output $right-monitor
+# workspace $ws7 output $right-monitor
+# workspace $ws8 output $right-monitor
+# workspace $ws9 output $right-monitor
+# workspace $ws0 output $right-monitor
 
 ### Assign windows
 assign [class="firefox"] workspace $ws1 
@@ -148,7 +149,7 @@ bindsym $mod+Shift+0 move container to workspace number $ws0; workspace $ws0
 
 ### Border configuration
 default_border pixel 2
-gaps inner 10
+gaps inner 5
 
 # set $bg #171717
 # set $fg #eff1f5
