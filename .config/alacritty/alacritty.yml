@@ -1,11 +1,11 @@
 schemes:
   # Tokyo Night theme, based on both:
-- ~/.config/alacritty/colors-material.yml
+  #- ~/.config/alacritty/colors-material.yml
   #   https://github.com/enkia/tokyo-night-vscode-theme
   tokyo-night: &tokyo-night
     # Default colors
     primary:
-      background: '0x1a1b26'
+      background: '0x1e1e1e' #'0x1a1b26'
       foreground: '0xa9b1d6'
 
     # Normal colors
@@ -63,5 +63,6 @@ colors: *tokyo-night
 font:
   size: 16.0
 
-background_opacity: 0.9
+window:
+  opacity: 1
 
