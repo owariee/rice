@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-FILE_DATE="$(date +"%F %r")"
-FILE_DIR="/home/$(whoami)/Pictures"
-FILE_NAME="$FILE_DATE.png"
-FILE_PATH="$FILE_DIR/$FILE_NAME"
-
-maim -s "$FILE_PATH"
-xclip -selection clipboard -t image/png "$FILE_PATH"
-
