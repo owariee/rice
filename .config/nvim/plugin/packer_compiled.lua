@@ -179,11 +179,6 @@ _G.packer_plugins = {
     path = "/home/owari/.local/share/nvim/site/pack/packer/start/gruvbox",
     url = "https://github.com/morhetz/gruvbox"
   },
-  himalaya = {
-    loaded = true,
-    path = "/home/owari/.local/share/nvim/site/pack/packer/start/himalaya",
-    url = "https://github.com/soywod/himalaya"
-  },
   ["impatient.nvim"] = {
     loaded = true,
     path = "/home/owari/.local/share/nvim/site/pack/packer/start/impatient.nvim",

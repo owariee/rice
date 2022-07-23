@@ -46,7 +46,7 @@ return packer.startup(function(use)
   use "lervag/vimtex"
   use "vimwiki/vimwiki"
   use "dhruvasagar/vim-table-mode"
-  use "soywod/himalaya"
+  -- use {"soywod/himalaya", rtp = 'vim' }
   use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
   use "kana/vim-fakeclip"
 
