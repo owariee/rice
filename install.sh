@@ -8,14 +8,18 @@ do
 done
 cd ..
 
-cd .local
-for d in */
-do
-  [[ -d ~/.local/${d%/} ]] && [[ ! -L ~/.local/${d%/} ]] && rm -rf ~/.local/$d
-  ln -sf $(pwd)/$d ~/.local
-  echo "Symlink created for ${d%/}!"
-done
-cd ..
+[[ -d ~/.local/bin/ ]] && [[ ! -L ~/.local/bin/ ]] && rm -rf ~/.local/bin
+ln -sf $(pwd)/scripts ~/.local/bin
+echo "Symlink created for ~/.local/bin!"
+
+# cd .local
+# for d in */
+# do
+#   [[ -d ~/.local/${d%/} ]] && [[ ! -L ~/.local/${d%/} ]] && rm -rf ~/.local/$d
+#   ln -sf $(pwd)/$d ~/.local
+#   echo "Symlink created for ${d%/}!"
+# done
+# cd ..
 
 ln -sf $(pwd)/.zshenv ~/
 echo "Symlink created for .zshenv!"
@@ -54,16 +58,16 @@ sudo -E ln -sf $ACTUAL_PWD/autologin.conf $AUTOLOGIN_FILE
 echo "Autologin enabled!"
 
 # create directories for mpd
-mkdir -p ~/.cache/mpd
-touch ~/.cache/mpd/db
-touch ~/.cache/mpd/pid
-touch ~/.cache/mpd/state
-touch ~/.cache/mpd/sticker.sql
-mkdir -p ~/.local/share/mpd/playlists
+# mkdir -p ~/.cache/mpd
+# touch ~/.cache/mpd/db
+# touch ~/.cache/mpd/pid
+# touch ~/.cache/mpd/state
+# touch ~/.cache/mpd/sticker.sql
+# mkdir -p ~/.local/share/mpd/playlists
 
 # create directories for ncmpcpp
-mkdir -p ~/.cache/ncmpcpp
-mkdir -p ~/.local/share/ncmpcpp/lyrics
-ln -sf /mnt/backup/music /home/$(whoami)/Music
-echo "music player daemon setup!"
+# mkdir -p ~/.cache/ncmpcpp
+# mkdir -p ~/.local/share/ncmpcpp/lyrics
+# ln -sf /mnt/backup/music /home/$(whoami)/Music
+# echo "music player daemon setup!"
 

@@ -193,5 +193,5 @@ export FZF_DEFAULT_COMMAND="find -L"
 #-------------
 # Start X.Org
 
-[ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ] && startx # or startx
+# [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ] && startx # or startx
 
