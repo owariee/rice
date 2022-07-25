@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+[[ "$1" == "pkg-update" ]] && yay -Qe | awk '{print $1}' > packages.yay && exit
+
 cd .config
 for d in */ 
 do
