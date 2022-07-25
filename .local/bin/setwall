@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-#sxiv -fto
-WALLPAPER=$(imv /mnt/backup/wallpapers)
-WALLPAPER_FILE=/home/$(whoami)/.cache/wallpaper
-[[ ! -z "${WALLPAPER}" ]] && ln -sf $WALLPAPER $WALLPAPER_FILE && loadwall
-

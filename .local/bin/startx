@@ -1,2 +1,0 @@
-#!/usr/bin/env sh
-xinit /home/owari/.config/x11/xinitrc -- /home/owari/.config/x11/xserverrc -br
