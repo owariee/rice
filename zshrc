@@ -15,6 +15,11 @@ antigen apply
 
 export EDITOR="nvim"
 alias ls="exa --group-directories-first"
+alias l="ls"
+alias ll="ls -l"
+alias la="ls -a"
+alias lla="ls -la"
+
 alias rm='trash -i'
 
 alias v="nvim"
