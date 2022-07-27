@@ -10,15 +10,15 @@ do
 done
 cd ..
 
-[[ -d ~/.local/bin/ ]] && [[ ! -L ~/.local/bin/ ]] && rm -rf ~/.local/bin
-ln -sf $(pwd)/scripts ~/.local/bin
-echo "Symlink created for ~/.local/bin!"
+#[[ -d ~/.local/bin/ ]] && [[ ! -L ~/.local/bin/ ]] && rm -rf ~/.local/bin
+#ln -sf $(pwd)/scripts ~/.local/bin
+#echo "Symlink created for ~/.local/bin!"
 
-ln -sf $(pwd)/.zshenv ~/
-echo "Symlink created for .zshenv!"
+#ln -sf $(pwd)/.zshenv ~/
+#echo "Symlink created for .zshenv!"
 
-CRONTAB_LOCATION="/var/spool/cron/$(whoami)"
-[[ -f $CRONTAB_LOCATION ]] && doas rm -rf $CRONTAB_LOCATION
-doas ln -sf $(pwd)/crontab /var/spool/cron/$(whoami)
-echo "Symlink created for crontab!"
+#CRONTAB_LOCATION="/var/spool/cron/$(whoami)"
+#[[ -f $CRONTAB_LOCATION ]] && doas rm -rf $CRONTAB_LOCATION
+#doas ln -sf $(pwd)/crontab /var/spool/cron/$(whoami)
+#echo "Symlink created for crontab!"
 
