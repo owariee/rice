@@ -3,8 +3,8 @@
 
 ln -sf $(pwd)/kitty ~/.config
 ln -sf $(pwd)/nvim ~/.config
-mkdir -p '~/.config/Code - OSS/User'
-ln -sf $(pwd)/extras/code.json '~/.config/Code - OSS/User/settings.json'
+mkdir -p ~/.config/Code\ -\ OSS/User
+ln -sf $(pwd)/extras/code.json ~/.config/Code\ -\ OSS/User/settings.json
 ln -sf $(pwd)/extras/zshrc ~/.zshrc
 mkdir -p ~/.local/bin
 ln -sf $(pwd)/extras/chrono ~/.local/bin
