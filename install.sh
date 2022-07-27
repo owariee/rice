@@ -4,7 +4,7 @@
 ln -sf $(pwd)/kitty ~/.config
 ln -sf $(pwd)/nvim ~/.config
 ln -sf $(pwd)/code '~/.config/Code - OSS'
-ln -sf $(pwd)/.zshrc ~/
+ln -sf $(pwd)/zshrc ~/.zshrc
 mkdir -p ~/.local/bin
 cp $(pwd)/scripts/* ~/.local/bin
 
