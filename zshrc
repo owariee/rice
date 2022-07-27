@@ -1,75 +1,18 @@
-# prompt
-autoload -Uz vcs_info
-autoload -U colors && colors
-precmd_vcs_info() { vcs_info }
-precmd_functions+=( precmd_vcs_info )
-setopt prompt_subst
+[[ ! -f $HOME/.cache/antigen.zsh ]] && curl -L git.io/antigen > $HOME/.cache/antigen.zsh
+source $HOME/.cache/antigen.zsh
 
-zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
+antigen use oh-my-zsh
+antigen theme https://github.com/denysdovhan/spaceship-zsh-theme spaceship
 
-+vi-git-untracked(){
-    if [[ $(git rev-parse --is-inside-work-tree 2> /dev/null) == 'true' ]] && \
-        git status --porcelain | grep -q '^?? ' 2> /dev/null ; then
-        hook_com[staged]+='T'
-    fi
-}
+antigen bundle command-not-found
+antigen bundle autojump
+antigen bundle compleat
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-history-substring-search ./zsh-history-substring-search.zsh
+antigen bundle zsh-users/zsh-autosuggestions
 
-zstyle ':vcs_info:*' check-for-changes true
-zstyle ':vcs_info:git:*' formats " on  %b %{$fg[red]%}%m%u%c"
+antigen apply
 
-# d to show full pwd
-PROMPT=$'\n'"%{$fg[magenta]%}%n@%m %{$fg[cyan]%}%3~%\%{$fg[yellow]%}\$vcs_info_msg_0_"
-PROMPT+=$'\n'"%{$reset_color%}%{$fg_bold[green]%}➜ %{$reset_color%}"
-
-# key bindings (emacs, viins, vicmd)
-autoload -U up-line-or-beginning-search
-zle -N up-line-or-beginning-search
-bindkey -M emacs "${terminfo[kcuu1]}" up-line-or-beginning-search
-
-autoload -U down-line-or-beginning-search
-zle -N down-line-or-beginning-search
-bindkey -M emacs "${terminfo[kcud1]}" down-line-or-beginning-search
-
-bindkey "${terminfo[kcbt]}" reverse-menu-complete
-bindkey "${terminfo[kpp]}" up-line-or-history
-bindkey "${terminfo[knp]}" down-line-or-history
-bindkey '^[[1;5C' forward-word
-bindkey '^[[1;5D' backward-word
-
-bindkey "${terminfo[khome]}" beginning-of-line
-bindkey "${terminfo[kend]}" end-of-line
-bindkey "${terminfo[kdch1]}" delete-char
-
-# horizon plugin manager
-# by: myself
-function horizon() {
-    REPO_DIR=$HOME/.cache/zsh/plugins/$1
-    [ ! -d $REPO_DIR ] && git clone https://github.com/zsh-users/$1 $REPO_DIR
-    source "$REPO_DIR/$1.zsh"
-}
-
-# source /opt/asdf-vm/asdf.sh
-source /etc/profile.d/PackageKit.sh
-
-horizon zsh-autosuggestions
-horizon zsh-history-substring-search
-horizon zsh-syntax-highlighting
-
-# enable history save, auto cd, completion
-HISTFILE="$HOME/.cache/zsh/history"
-HISTSIZE=50000
-SAVEHIST=10000
-setopt appendhistory
-
-setopt auto_cd
-
-autoload -Uz _store_cache compinit 
-zstyle ':completion:*' menu select
-zmodload zsh/complist
-compinit -C -d "$HOME/.cache/zsh/zcompdump"
-_comp_options+=(globdots)
-
-# common-aliases replacement
 export EDITOR="nvim"
 alias ls="exa --group-directories-first"
 alias rm='trash -i'
@@ -90,4 +33,3 @@ alias glo="git log --oneline"
 alias dd="sudo dd bs=4M conv=fdatasync status=progress"
 alias audioloopback="pactl load-module module-loopback"
 alias audioloopbackdisable="pactl unload-module module-loopback"
-

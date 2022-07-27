@@ -5,4 +5,6 @@ ln -sf $(pwd)/nvim ~/.config
 mkdir -p ~/.config/Code\ -\ OSS/User
 ln -sf $(pwd)/code.json ~/.config/Code\ -\ OSS/User/settings.json
 ln -sf $(pwd)/zshrc ~/.zshrc
+mkdir -p ~/.config/fish
+ln -sf $(pwd)/config.fish ~/.config/fish
 
