@@ -62,8 +62,8 @@ function horizon() {
     source "$REPO_DIR/$1.zsh"
 }
 
-#source /opt/asdf-vm/asdf.sh
-source /etc/profile.d/autojump.sh
+# source /opt/asdf-vm/asdf.sh
+# source /etc/profile.d/autojump.sh
 source /etc/profile.d/PackageKit.sh
 
 horizon zsh-autosuggestions

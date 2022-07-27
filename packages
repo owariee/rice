@@ -7,5 +7,6 @@ zsh
 g++
 exa
 gimp
-autojump
+autojump-zsh
 trash-cli
+nodejs-bash-language-server
