@@ -22,19 +22,6 @@ PROMPT=$'\n'"%{$fg[magenta]%}%n@%m %{$fg[cyan]%}%3~%\%{$fg[yellow]%}\$vcs_info_m
 PROMPT+=$'\n'"%{$reset_color%}%{$fg_bold[green]%}➜ %{$reset_color%}"
 
 # key bindings (emacs, viins, vicmd)
-bindkey -e
-
-if (( ${+terminfo[smkx]} )) && (( ${+terminfo[rmkx]} )); then
-  function zle-line-init() {
-    echoti smkx
-  }
-  function zle-line-finish() {
-    echoti rmkx
-  }
-  zle -N zle-line-init
-  zle -N zle-line-finish
-fi
-
 autoload -U up-line-or-beginning-search
 zle -N up-line-or-beginning-search
 bindkey -M emacs "${terminfo[kcuu1]}" up-line-or-beginning-search
@@ -52,7 +39,6 @@ bindkey '^[[1;5D' backward-word
 bindkey "${terminfo[khome]}" beginning-of-line
 bindkey "${terminfo[kend]}" end-of-line
 bindkey "${terminfo[kdch1]}" delete-char
-bindkey -s '^o' 'nvim $(fzf)^M'
 
 # horizon plugin manager
 # by: myself
@@ -63,7 +49,6 @@ function horizon() {
 }
 
 # source /opt/asdf-vm/asdf.sh
-# source /etc/profile.d/autojump.sh
 source /etc/profile.d/PackageKit.sh
 
 horizon zsh-autosuggestions
@@ -85,21 +70,12 @@ compinit -C -d "$HOME/.cache/zsh/zcompdump"
 _comp_options+=(globdots)
 
 # common-aliases replacement
-alias ls="exa --icons --group-directories-first -F"
-alias l="ls"
-alias ll="ls -l"
-alias la="ls -a"
-alias lla="ls -la"
-alias ldot="ls -ld .*"
-
-alias grep="grep --color"
-
+export EDITOR="nvim"
+alias ls="exa --group-directories-first"
 alias rm='trash -i'
-alias cp='cp -i'
-alias mv='mv -i'
 
 alias v="nvim"
-alias d="sudo dnf -C"
+alias d="sudo dnf"
 
 alias g="git"
 alias ga="git add"
@@ -114,11 +90,4 @@ alias glo="git log --oneline"
 alias dd="sudo dd bs=4M conv=fdatasync status=progress"
 alias audioloopback="pactl load-module module-loopback"
 alias audioloopbackdisable="pactl unload-module module-loopback"
-
-export EDITOR="nvim"
-
-export GTK_IM_MODULE='fcitx'
-export QT_IM_MODULE='fcitx'
-export SDL_IM_MODULE='fcitx'
-export XMODIFIERS='@im=fcitx'
 

@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
-[[ "$1" == "pkg-update" ]] && yay -Qe | awk '{print $1}' > packages.yay && exit
-
 mkdir -p ~/.config/kitty
 ln -sf $(pwd)/kitty.conf ~/.config/kitty/kitty.conf
 ln -sf $(pwd)/nvim ~/.config
