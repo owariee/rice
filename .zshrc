@@ -63,8 +63,8 @@ function horizon() {
 }
 
 #source /opt/asdf-vm/asdf.sh
-source /usr/share/autojump/autojump.zsh
-#source /usr/share/doc/pkgfile/command-not-found.zsh
+source /etc/profile.d/autojump.sh
+source /etc/profile.d/PackageKit.sh
 
 horizon zsh-autosuggestions
 horizon zsh-history-substring-search
@@ -99,10 +99,7 @@ alias cp='cp -i'
 alias mv='mv -i'
 
 alias v="nvim"
-
-alias d="dnf -C"
-alias y="yay --noconfirm"
-alias p="doas pacman --noconfirm"
+alias d="sudo dnf -C"
 
 alias g="git"
 alias ga="git add"
@@ -114,25 +111,11 @@ alias gs="git status"
 alias gl="git log"
 alias glo="git log --oneline"
 
-alias z="j"
-
-alias dd="doas dd bs=4M conv=fdatasync status=progress"
-alias rat="ratbagctl \$(ratbagctl list | awk -F : '{print $1}')"
-alias pl="watch -n 1 \$(pacmd list-sinks | grep 'latency: [1-9]')"
-alias ploe="pactl load-module module-loopback"
-alias plod="pactl unload-module module-loopback"
-alias me="xrandr --output DVI-D-1 --mode 1366x768 --panning 1368x768+1920+672"
-alias md="xrandr --output DVI-D-1 --off"
-
-alias zshrc="nvim ~/.config/zsh/.zshrc"
+alias dd="sudo dd bs=4M conv=fdatasync status=progress"
+alias audioloopback="pactl load-module module-loopback"
+alias audioloopbackdisable="pactl unload-module module-loopback"
 
 export EDITOR="nvim"
-export TERM="kitty"
-export VISUAL="$EDITOR"
-export PATH="$HOME/.local/bin:/usr/lib/ccache/bin/:/usr/bin/vendor_perl/:$PATH"
-export LC_ALL="en_US.UTF-8"
-export ZDOTDIR="$HOME/.config/zsh"
-export FZF_DEFAULT_COMMAND="find -L"
 
 export GTK_IM_MODULE='fcitx'
 export QT_IM_MODULE='fcitx'
